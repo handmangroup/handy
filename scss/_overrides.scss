@@ -1,0 +1,33 @@
+hr {
+  margin: 1rem;
+}
+
+.alert svg {
+  max-width: 2rem;
+  height: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  &.align-left {
+    padding-right: 15px;
+  }
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+nav.navbar {
+  background: $white;
+}
+
+.dropdown-item {
+  color: $black !important;
+}
+
+.title-wrapper {
+  min-height: 500px;
+}

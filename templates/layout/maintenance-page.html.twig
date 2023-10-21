@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Olivero's theme implementation to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+ #}
+<div class="main-container">
+  <section class="cover imagebg height-100 text-center" data-overlay="7">
+     <div class="background-image-holder">
+      <img alt="background" src="/themes/custom/stack/img/maintenance.jpg" />
+    </div>
+    <div class="container pos-vertical-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>
+            {{ page.content }}            
+          </h2>
+        </div>
+      </div>
+      <!--end of row-->
+    </div>
+    <!--end of container-->
+  </section>
+</div>

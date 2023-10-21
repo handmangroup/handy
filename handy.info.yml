@@ -1,0 +1,40 @@
+name: Handy
+type: theme
+description: 'A Drupal 10 Multi-Purpose Theme.'
+core_version_requirement: ^9 || ^10
+base theme: bootstrap_barrio
+
+libraries:
+  - handy/global-styling
+  - handy/bootstrap
+
+regions:
+  top_bar: 'Top bar'
+  branding: 'Site branding'
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  navigation_other: 'Navigation Other'
+  title: 'Title'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer_1: 'Footer'
+  footer_2: 'Footer 2'
+  footer_3: 'Footer 3'
+  footer_4: 'Footer 4'
+  copyright: 'Copyright'
+  disabled: 'Disabled'
+
+# Information added by Drupal.org packaging script on 2023-01-19
+version: '1.0.0'
+project: 'bootstrap_barrio'
+datestamp: 1674098248
+
+# Override theme's parent libraries
+libraries-override:
+  bootstrap_barrio/global-styling:
+    css:
+      component:
+        css/components/table.css: false
