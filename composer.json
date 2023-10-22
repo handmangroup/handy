@@ -17,6 +17,6 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "require": {
-    "drupal/bootstrap_barrio": "^5.5"
+    "drupal/bootstrap_barrio": "dev-5.x"
   }
 }
