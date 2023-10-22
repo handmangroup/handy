@@ -1,0 +1,22 @@
+{
+  "name": "nubay/handytheme",
+  "description": "Handy Theme for Drupal 9+",
+  "type": "drupal-theme",
+  "homepage": "https://github.com/Nubay-Services/HandyTheme",
+  "authors": [
+    {
+      "name": "Jill Handman",
+      "homepage": "https://nubay.org",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Nubay-Services/HandyTheme",
+    "source": "https://github.com/Nubay-Services/HandyTheme.git"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/bootstrap_barrio": "^5.5"
+  }
+}
