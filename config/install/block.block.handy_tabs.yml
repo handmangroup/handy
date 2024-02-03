@@ -1,0 +1,20 @@
+uuid: a5e4d789-883e-402a-8ac3-b4cd28f3eac2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - handy
+id: handy_tabs
+theme: handy
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

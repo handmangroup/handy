@@ -1,25 +1,18 @@
 global-styling:
-  version: VERSION
   css:
     component:
       css/plugins.css: {}
-      css/fonts/space.css: {}
+      css/colors.css: {}
     theme:
       css/style.css: {}
   js:
     js/plugins.js: {}
     js/theme.js: {}
     js/global.js: {}
-    js/facebook-feed.js: {}
     js/barrio.js: {}
     js/swiper.js: {}
   dependencies:
     - core/jquery
-global-styling-rtl:
-  css:
-    theme:
-      css/style-rtl.css: {}
-      css/custom-rtl.css: {}
 bootstrap:
   js:
     /libraries/bootstrap/dist/js/bootstrap.min.js: { weight: -20 }

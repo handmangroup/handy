@@ -1,0 +1,22 @@
+uuid: beabc0b3-51a2-4a73-beb0-e7cb6b180f9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_extra_html
+    - paragraphs.paragraphs_type.paragraph_section
+  module:
+    - text
+third_party_settings: {  }
+id: paragraph.paragraph_section.field_paragraph_extra_html
+field_name: field_paragraph_extra_html
+entity_type: paragraph
+bundle: paragraph_section
+label: 'Extra HTML'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
