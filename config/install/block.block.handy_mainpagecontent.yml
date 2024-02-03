@@ -1,0 +1,20 @@
+uuid: 5e9a49d3-fa5f-42c8-8d40-df17f189c882
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - handy
+id: handy_mainpagecontent
+theme: handy
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

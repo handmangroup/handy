@@ -125,33 +125,27 @@
 
 {# Title #}
 
-<section class="wrapper title-wrapper image-wrapper bg-overlay bg-overlay-400 bg-dark bg-image text-white" data-image-src="{{ bgImage }}">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        {# Title #}
-        {% if page.title %}
-        {% block title %}
-          {{ page.title }}
-        {% endblock %}
-        {% endif %}
+{# Title #}
+{% if page.title  %}
+  <section class="wrapper bg-light title-wrapper">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-8 col-lg-7 col-xl-6 mx-auto">
+          {# Title #}
+          {% block title %}
+            {{ page.title }}
+          {% endblock %}
+        </div>
+        <!-- /column -->
       </div>
-      <!-- /column -->
+      <!-- /.row -->
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-</section>
-
+    <!-- /.container -->
+  </section>
+{% endif %}
 <!--end title-->
 
-<div class="shape bg-dot white w-16 h-18" style="
-     height: 30px;
-     width: 30%;
-     bottom: 30%;
-     right: -1.6rem;
-     position: absolute;">&nbsp;
-</div>
+
 {# Main #}
 {% block main %}
     <div role="main" id="main-container" class="main-container container js-quickedit-main-content">

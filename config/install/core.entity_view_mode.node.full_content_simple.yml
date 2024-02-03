@@ -1,0 +1,10 @@
+uuid: 59ec0d0a-3d3a-4c8e-ac9d-207ecbd3d5ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.full_content_simple
+label: 'Full Content Simple'
+targetEntityType: node
+cache: true

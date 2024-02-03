@@ -1,0 +1,25 @@
+uuid: 5dc502d6-86cc-4aaf-9289-e8b191d79ae4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c8b6de5f-416a-4de6-b384-f27b8b4caab0'
+  module:
+    - block_content
+  theme:
+    - handy
+id: offcanvasfooter
+theme: handy
+region: disabled
+weight: 0
+provider: null
+plugin: 'block_content:c8b6de5f-416a-4de6-b384-f27b8b4caab0'
+settings:
+  id: 'block_content:c8b6de5f-416a-4de6-b384-f27b8b4caab0'
+  label: 'Offcanvas Footer'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 0a3accc3-9e8e-49b8-bf4b-dc6ceeabcaf6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - handy
+id: breadcrumbs
+theme: handy
+region: title
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

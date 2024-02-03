@@ -1,0 +1,24 @@
+uuid: ce43ec0c-f639-4a2c-9204-d8eebd20ffd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.project
+  module:
+    - text
+third_party_settings: {  }
+id: node.project.body
+field_name: body
+entity_type: node
+bundle: project
+label: 'Project About'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

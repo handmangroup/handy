@@ -1,0 +1,29 @@
+uuid: 03033ef9-f99f-4115-877c-3824493b9ca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - handy
+id: handy_mainnavigation
+theme: handy
+region: navigation_collapsible
+weight: -2
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /demo-24

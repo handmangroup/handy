@@ -1,0 +1,18 @@
+uuid: 8cb890ca-2f3d-47eb-b96d-09abd068506a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - handy
+id: handy_pagetitle
+theme: handy
+region: title
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

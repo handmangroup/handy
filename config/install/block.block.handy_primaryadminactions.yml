@@ -1,0 +1,18 @@
+uuid: 381a940e-97b2-411c-b97c-dfc82e482668
+langcode: en
+status: true
+dependencies:
+  theme:
+    - handy
+id: handy_primaryadminactions
+theme: handy
+region: content
+weight: -1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
