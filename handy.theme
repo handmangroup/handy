@@ -16,8 +16,17 @@ use Drupal\image\Entity\ImageStyle;
  *
  * Example on how to alter theme settings form
 
-function stack_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+
+function handy_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
     'bg-primary' => t('Primary'),
     'bg-secondary' => t('Secondary'),
     'bg-light' => t('Light'),
@@ -27,7 +36,6 @@ function stack_form_system_theme_settings_alter(&$form, FormStateInterface $form
   ];
 }
  */
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
@@ -38,7 +46,7 @@ function handy_theme_suggestions_page_alter(array &$suggestions, array $variable
       		$node = \Drupal\node\Entity\Node::load($node);
     	}
     $content_type = $node->bundle();
-    if ($content_type == 'landing_page' or $content_type == 'article' or $content_type == 'job' or $content_type == 'project') {
+    if ($content_type == 'landing_page' or $content_type == 'article' or $content_type == 'project') {
 	  $suggestions[] = 'page__fullwidth';
 	}
   }
@@ -59,6 +67,10 @@ function handy_theme_suggestions_page_alter(array &$suggestions, array $variable
  * Add color, menu and theme settings
  */
 function handy_preprocess_page(&$variables) {
+  $color = theme_get_setting('theme_color');
+  if ($color != 'default') {
+    $variables['#attached']['library'][] = 'handy/'.$color.'-styling';
+  }
   // Theme menu
   $menu = theme_get_setting('theme_menu');
   $variables['mainmenu_class'] = '';

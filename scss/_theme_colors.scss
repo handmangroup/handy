@@ -1,39 +1,16 @@
 // Theme Colors
-
-$navy: #1b365d !default;
+$sky: #5eb9f0 !default;
+$blue: #3f78e0 !default;
+$grape: #605dba !default;
+$purple: #747ed1 !default;
+$violet: #a07cc5 !default;
+$pink: #d16b86 !default;
+$fuchsia: #e668b3 !default;
+$red: #e2626b !default;
+$orange: #f78b77 !default;
+$yellow: #fab758 !default;
+$green: #45c4a0 !default;
+$leaf: #7cb798 !default;
+$aqua: #54a8c7 !default;
+$navy: #343f52 !default;
 $ash: #9499a3 !default;
-$dark-purple: #551c43 !default;
-$teal: #004c5d !default;
-$maroon: #a9371c !default;
-$khaki: #c3c1a7 !default;
-$cyan: #4990ba !default;
-$blue: #267dae !default;
-$light-blue: #298FC2 !default;
-$silver: #ecebe7 !default;
-
-$colors: (
-  "navy": $navy,
-  "dark-purple": $dark-purple,
-  "teal": $teal,
-  "khaki": $khaki,
-  "ash": $ash,
-  "white": #fff,
-  "maroon": $maroon,
-  "blue": $blue,
-  "silver": $silver,
-  "light-blue": $light-blue,
-) !default;
-$secondary: $teal !default;
-$success: $teal !default;
-$info: $khaki !default;
-$warning: $khaki !default;
-$danger: $maroon !default;
-$theme-colors: map-merge($colors,
-  ("secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
-  ));
-
-$main-dark: $navy !default;

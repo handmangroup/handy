@@ -4,9 +4,6 @@
 //Theme Colors
 @import 'theme_colors';
 
-// Theme variables
-@import "variables";
-
 // Bootstrap configuration
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
@@ -16,6 +13,9 @@
 
 // Bootstrap layout & components
 @import "bootstrap";
+
+// Theme variables
+@import "variables";
 
 // Theme configuration
 @import "theme/functions";
@@ -32,5 +32,3 @@
 // User custom styles
 @import 'overrides';
 @import 'handy-styles';
-@import 'lawrence';
-

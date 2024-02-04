@@ -1,4 +1,3 @@
-
 //----------------------------------------------------------//
 //	OPTIONS
 //----------------------------------------------------------//
@@ -13,55 +12,37 @@ $enable-negative-margins: true !default;
 $spacer: 1rem !default;
 $spacers: () !default;
 $spacers: map-merge(
-  (
-    0: 0,
-    1: ($spacer * 0.25), // 5px
-    2: ($spacer * 0.5), // 10px
-    3: ($spacer * 0.75), // 15px
-    4: $spacer, // 20px
-    5: ($spacer * 1.25), // 25px
-    6: ($spacer * 1.5), // 30px
-    7: ($spacer * 1.75), // 35px
-    8: ($spacer * 2), // 40px
-    9: ($spacer * 2.25), // 45px
-    10: ($spacer * 2.5), // 50px
-    11: ($spacer * 3), // 60px
-    12: ($spacer * 3.5), // 70x
-    13: ($spacer * 4), // 80px
-    14: ($spacer * 4.5), // 90px
-    15: ($spacer * 5), // 100px
-    16: ($spacer * 6), // 120px
-    17: ($spacer * 7), // 140px
-    18: ($spacer * 8), // 160px
-    19: ($spacer * 9), // 180px
-    20: ($spacer * 10), // 200px
-    21: ($spacer * 12.5), // 250px
-    22: ($spacer * 15), // 300px
-    23: ($spacer * 17.5), // 350px
-    24: ($spacer * 20), // 400px
-    25: ($spacer * 22.5), // 450px
-  ),
-  $spacers
+    (
+      0: 0,
+      1: ($spacer * 0.25), // 5px
+      2: ($spacer * 0.5), // 10px
+      3: ($spacer * 0.75), // 15px
+      4: $spacer, // 20px
+      5: ($spacer * 1.25), // 25px
+      6: ($spacer * 1.5), // 30px
+      7: ($spacer * 1.75), // 35px
+      8: ($spacer * 2), // 40px
+      9: ($spacer * 2.25), // 45px
+      10: ($spacer * 2.5), // 50px
+      11: ($spacer * 3), // 60px
+      12: ($spacer * 3.5), // 70x
+      13: ($spacer * 4), // 80px
+      14: ($spacer * 4.5), // 90px
+      15: ($spacer * 5), // 100px
+      16: ($spacer * 6), // 120px
+      17: ($spacer * 7), // 140px
+      18: ($spacer * 8), // 160px
+      19: ($spacer * 9), // 180px
+      20: ($spacer * 10), // 200px
+      21: ($spacer * 12.5), // 250px
+      22: ($spacer * 15), // 300px
+      23: ($spacer * 17.5), // 350px
+      24: ($spacer * 20), // 400px
+      25: ($spacer * 22.5), // 450px
+    ),
+    $spacers
 );
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
-
-// Theme Colors
-$sky: #5eb9f0 !default;
-$blue: #3f78e0 !default;
-$grape: #605dba !default;
-$purple: #747ed1 !default;
-$violet: #a07cc5 !default;
-$pink: #d16b86 !default;
-$fuchsia: #e668b3 !default;
-$red: #e2626b !default;
-$orange: #f78b77 !default;
-$yellow: #fab758 !default;
-$green: #45c4a0 !default;
-$leaf: #7cb798 !default;
-$aqua: #54a8c7 !default;
-$navy: #343f52 !default;
-$ash: #9499a3 !default;
-
 //----------------------------------------------------------//
 //	COLOR SYSTEM
 //----------------------------------------------------------//
@@ -87,8 +68,8 @@ $box-layout-bg: #edeef1 !default;
 $shadow-border: #083c82 !default;
 $feedback-success: #198754;
 $feedback-danger: #dc3545;
-$primary: #1b365d !default;
-$colors: (
+$primary: $blue !default;
+$colors: ("blue": $blue,
   "sky": $sky,
   "purple": $purple,
   "grape": $grape,
@@ -107,6 +88,7 @@ $colors: (
   "light": $light,
   "gray": $gray,
   "dark": $dark,
+  "primary": $primary,
 ) !default;
 $secondary: $gray-400 !default;
 $success: $green !default;
@@ -125,8 +107,8 @@ $link-colors: map-remove($theme-colors, "dark") !default;
 $button-colors: map-remove($theme-colors, "gray") !default;
 $button-soft-colors: map-remove($colors, "white", "light", "gray") !default;
 $bg-pale-colors: map-remove($colors, "white", "light", "gray") !default;
-$bg-soft-colors: map-remove($colors, "white", "light", "khaki") !default;
-$bullet-colors: map-remove($colors, "khaki") !default;
+$bg-soft-colors: map-remove($colors, "white", "light", "yellow") !default;
+$bullet-colors: map-remove($colors, "yellow") !default;
 $main-color: $primary !default;
 $main-dark: $navy !default;
 $bg-soft-level: 90.5% !default;
@@ -305,7 +287,7 @@ $box-shadow-sm: 0rem 0.25rem 0.75rem rgba($gray-900, 0.02) !default;
 $box-shadow-sm-hover: 0rem 0.25rem 0.75rem rgba($gray-900, 0.05) !default;
 $box-shadow-md: 0rem 0rem 1.25rem rgba($gray-900, 0.06) !default;
 $box-shadow-lg: 0rem 0.25rem 1.75rem rgba($gray-900, 0.07) !default;
-$box-shadow-xl: rgba($gray-900, 2%) 0px 2px 1px, rgba($gray-900, 2%) 0px 4px 2px, rgba($gray-900, 2%) 0px 8px 4px, rgba($gray-900, 2%) 0px 16px 8px, rgba($gray-900, 3%) 0px 32px 16px !default;
+$box-shadow-xl: rgba(30, 34, 40, .02) 0px 2px 1px, rgba(30, 34, 40, .02) 0px 4px 2px, rgba(30, 34, 40, .02) 0px 8px 4px, rgba(30, 34, 40, .02) 0px 16px 8px, rgba(30, 34, 40, .03) 0px 32px 16px !default;
 $box-shadow-with-border: 0 0 0 0.05rem rgba($shadow-border, 0.06), $box-shadow !default;
 $btn-shadow: 0rem 0.25rem 0.75rem rgba($gray-900, 0.15) !default;
 $btn-shadow-sm: 0rem 0.25rem 0.75rem rgba($gray-900, 0.05) !default;
@@ -320,12 +302,11 @@ $mark-padding: 0.05rem 0.4rem 0.2rem !default;
 //----------------------------------------------------------//
 //	TYPOGRAPHY
 //----------------------------------------------------------//
-$path-to-fonts: "https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400&family=Dosis:wght@300;500;700&family=Montserrat:wght@300;400;500;600;700;900&family=Open+Sans:wght@300;400;500;600&family=Raleway:wght@500&display=swap" !default;
-$font-family-sans-serif: "Open Sans", sans-serif !default;
+$path-to-fonts: 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700' !default;
+$font-family-sans-serif: "Manrope", sans-serif !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-custom-icons: "Custom" !default;
 $font-family-unicons: "Unicons" !default;
-$font-family-display: "Roboto Flex", sans-serif !default;
 $font-size-root: 20px !default;
 $font-size-base: 0.8rem !default;
 $font-size-sm: 0.7rem !default;
@@ -368,7 +349,7 @@ $display-font-sizes: (1: 2.4rem,
   5: 1.6rem,
   6: 1.4rem,
 ) !default;
-$display-font-weight: 300 !default;
+$display-font-weight: 700 !default;
 $lead-font-size: $font-size-base * 1.25 * 0.9 !default;
 $lead-font-weight: 500 !default;
 $small-font-size: 0.6rem !default;
@@ -455,7 +436,7 @@ $input-height: add($input-line-height * 1em, add($input-padding-y * 2, $input-he
 $input-height-sm: add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
 $input-border-color: rgba($shadow-border, 0.07) !default;
 $input-box-shadow: $box-shadow !default;
-$input-focus-border-color: tint-color($primary, 50%) !default;
+$input-focus-border-color: tint-color($component-active-bg, 50%) !default;
 $input-focus-box-shadow: unset !default;
 $input-placeholder-color: $gray-500 !default;
 $input-border-radius: $border-radius !default;
@@ -466,7 +447,7 @@ $form-check-padding-start: $form-check-input-width + .5rem !default;
 $form-check-input-bg: $body-bg !default;
 $form-check-input-border: 1px solid rgba($shadow-border, 0.1) !default;
 $form-check-input-checked-color: $component-active-color !default;
-$form-check-input-checked-bg-color: $primary !default;
+$form-check-input-checked-bg-color: $component-active-bg !default;
 $form-check-input-checked-border-color: $form-check-input-checked-bg-color !default;
 $form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='1.5' fill='#{$form-check-input-checked-color}'/></svg>") !default;
 $form-check-input-focus-border: rgba($shadow-border, 0.1) !default;

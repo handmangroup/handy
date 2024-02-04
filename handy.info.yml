@@ -6,7 +6,6 @@ base theme: bootstrap_barrio
 
 libraries:
   - handy/global-styling
-  - handy/bootstrap
 
 regions:
   top_bar: 'Top bar'
@@ -27,10 +26,6 @@ regions:
   copyright: 'Copyright'
   disabled: 'Disabled'
 
-# Information added by Drupal.org packaging script on 2023-01-19
-version: '1.0.0'
-project: 'bootstrap_barrio'
-datestamp: 1674098248
 
 # Override theme's parent libraries
 libraries-override:
