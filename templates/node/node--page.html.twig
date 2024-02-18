@@ -76,6 +76,10 @@
     view_mode ? view_mode|clean_class,
   ]
 %}
+
+{{ attach_library('bootstrap_barrio/node') }}
+
+
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
@@ -101,7 +105,7 @@
     </footer>
   {% endif %}
 
-      <div{{ content_attributes.addClass('content') }}>
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'content') }}>
     {{ content|without('field_banner_background_image') }}
       </div>
 

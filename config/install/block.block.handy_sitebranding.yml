@@ -6,10 +6,12 @@ dependencies:
     - system
   theme:
     - handy
+_core:
+  default_config_hash: 6djX_Y6vrZiFMyNkZzLwQfRruiSWB4gLDKGzsR1buxc
 id: handy_sitebranding
 theme: handy
 region: branding
-weight: -3
+weight: -8
 provider: null
 plugin: system_branding_block
 settings:

@@ -9,6 +9,8 @@ dependencies:
     - paragraphs.paragraphs_type.paragraph_layout
   module:
     - options
+_core:
+  default_config_hash: iLQ1-khgH9GAGX4M4KpPzRPQx8rupBTZV3hjg2HOYFg
 id: paragraph.paragraph_layout.default
 targetEntityType: paragraph
 bundle: paragraph_layout

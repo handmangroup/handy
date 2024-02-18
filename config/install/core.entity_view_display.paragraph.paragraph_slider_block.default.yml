@@ -25,6 +25,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - text
+_core:
+  default_config_hash: wTDVTwGNae84mzjStRsdALwqm3R_dTt6dOdrCD9dYIg
 id: paragraph.paragraph_slider_block.default
 targetEntityType: paragraph
 bundle: paragraph_slider_block

@@ -13,6 +13,8 @@ dependencies:
     - file
     - image
     - imce
+_core:
+  default_config_hash: Mwjsh3oYM_kNPCZaGECOusspFQIHdYhCwnbL4JGl3bg
 id: paragraph.paragraph_section_video_bg.default
 targetEntityType: paragraph
 bundle: paragraph_section_video_bg

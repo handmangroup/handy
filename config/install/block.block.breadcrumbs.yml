@@ -6,10 +6,12 @@ dependencies:
     - system
   theme:
     - handy
+_core:
+  default_config_hash: g3mFfY4kRNRUelAaBDEUz7Br1Umn-EN9Cw-5V_1Ja8A
 id: breadcrumbs
 theme: handy
 region: title
-weight: -9
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:

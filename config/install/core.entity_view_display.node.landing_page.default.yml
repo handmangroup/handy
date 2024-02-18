@@ -1,4 +1,4 @@
-uuid: 06482352-9114-4a79-b472-2ea44a25bff5
+uuid: 57f1bf33-4eb4-4577-8984-a9de998ca0ce
 langcode: en
 status: true
 dependencies:
@@ -18,7 +18,7 @@ mode: default
 content:
   field_extra_class:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -26,7 +26,7 @@ content:
     region: content
   field_mainmenu_absolute:
     type: boolean
-    label: hidden
+    label: above
     settings:
       format: default
       format_custom_false: ''
@@ -36,13 +36,13 @@ content:
     region: content
   field_mainmenu_transparent:
     type: boolean
-    label: hidden
+    label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_paragraphs:
     type: layout_paragraphs
@@ -51,12 +51,11 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  body: true
+hidden: {  }

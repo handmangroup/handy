@@ -87,6 +87,104 @@ $value in $colors {
     }
   }
 }
+.solid-duo {
+  &.text-purple-aqua {
+    .fill-primary {
+      fill: $purple;
+    }
+    .fill-secondary {
+      fill: #8ce0f1;
+    }
+  }
+  &.text-navy-green {
+    .fill-primary {
+      fill: #414b64;
+    }
+    .fill-secondary {
+      fill: $green;
+    }
+  }
+  &.text-grape-fuchsia {
+    .fill-primary {
+      fill: $grape;
+    }
+    .fill-secondary {
+      fill: #f857a6;
+    }
+  }
+  &.text-grape-green {
+    .fill-primary {
+      fill: $grape;
+    }
+    .fill-secondary {
+      fill: #94dd8e;
+    }
+  }
+  &.text-navy-sky {
+    .fill-primary {
+      fill: #414b64;
+    }
+    .fill-secondary {
+      fill: $sky;
+    }
+  }
+  &.text-blue-pink {
+    .fill-primary {
+      fill: $blue;
+    }
+    .fill-secondary {
+      fill: #fc7eb9;
+    }
+  }
+  &.text-green-fuchsia {
+    .fill-primary {
+      fill: #8ed882;
+    }
+    .fill-secondary {
+      fill: $fuchsia;
+    }
+  }
+  &.text-grape-yellow {
+    .fill-primary {
+      fill: $grape;
+    }
+    .fill-secondary {
+      fill: $yellow;
+    }
+  }
+  &.text-sky-pink {
+    .fill-primary {
+      fill: $sky;
+    }
+    .fill-secondary {
+      fill: #ff98ab;
+    }
+  }
+  &.text-purple-pink {
+    .fill-primary {
+      fill: $purple;
+    }
+    .fill-secondary {
+      fill: #fdb9d3;
+    }
+  }
+  &.text-green-red {
+    .fill-primary {
+      fill: $green;
+    }
+    .fill-secondary {
+      fill: #ff7c94;
+    }
+  }
+  &.text-red-yellow {
+    .fill-primary {
+      fill: #e54281;
+    }
+    .fill-secondary {
+      fill: $yellow;
+    }
+  }
+}
 //----------------------------------------------------------//
 //	RATINGS
 //----------------------------------------------------------//

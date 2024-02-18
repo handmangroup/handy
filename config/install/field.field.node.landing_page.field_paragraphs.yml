@@ -10,7 +10,6 @@ dependencies:
     - paragraphs.paragraphs_type.paragraph_card
     - paragraphs.paragraphs_type.paragraph_content
     - paragraphs.paragraphs_type.paragraph_content_video
-    - paragraphs.paragraphs_type.paragraph_layout
     - paragraphs.paragraphs_type.paragraph_section
     - paragraphs.paragraphs_type.paragraph_section_image_bg
     - paragraphs.paragraphs_type.paragraph_section_image_side
@@ -20,6 +19,8 @@ dependencies:
     - paragraphs.paragraphs_type.paragraph_views_reference
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: fIi36_qJtHFdztPwmOqb7qQ9C911MzE9gnof-MSLBuU
 id: node.landing_page.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
@@ -40,7 +41,6 @@ settings:
       paragraph_card: paragraph_card
       paragraph_content: paragraph_content
       paragraph_content_video: paragraph_content_video
-      paragraph_layout: paragraph_layout
       paragraph_section_image_bg: paragraph_section_image_bg
       paragraph_section_image_side: paragraph_section_image_side
       paragraph_section_video_bg: paragraph_section_video_bg
@@ -67,12 +67,9 @@ settings:
       paragraph_content_video:
         weight: 23
         enabled: true
-      paragraph_content_video_popup:
-        weight: 24
-        enabled: false
       paragraph_layout:
         weight: 25
-        enabled: true
+        enabled: false
       paragraph_section:
         weight: 4
         enabled: true

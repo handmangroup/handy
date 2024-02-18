@@ -25,6 +25,8 @@ dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: yiVcfC2H2_I3tyL7-4GSLki18zid7QiVLGypjbERf8Q
 id: paragraph.paragraph_slider_block.default
 targetEntityType: paragraph
 bundle: paragraph_slider_block

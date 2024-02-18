@@ -4,10 +4,12 @@ status: true
 dependencies:
   theme:
     - handy
+_core:
+  default_config_hash: GrsKX-k3SiKIXFiyUylvR4WmaYEm1uPuYiwqTPe3oOI
 id: handy_primaryadminactions
 theme: handy
 region: content
-weight: -1
+weight: -6
 provider: null
 plugin: local_actions_block
 settings:

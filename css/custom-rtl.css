@@ -1,0 +1,131 @@
+/*------------------------------------------------------------------------
+# Stack Drupal
+# ------------------------------------------------------------------------
+# Created by Symphony Themes
+# Websites:  http://www.symphonythemes.com -  Email: info@symphonythemes.com
+--------------------------------------------------------------------------
+    1.   Custom CSS
+    2.   Forms
+    3.   Blog & Article
+    4.   Portfolio & Project
+    5.   Others
+--------------------------------------------------------------------------------*/
+
+/* 01. Custom CSS
+ --------------------------------------------------------------------------------*/
+
+/* Adaption */
+ol.process-3 {
+  padding-right: 0;
+}
+section .row--gapless div[class*="col-"] {
+    padding: 0;
+}
+
+/* Header */
+@media all and (min-width: 769px) {
+  #block-customblocktrybuiderbuynowbutton {
+  margin-left: 0;
+  margin-right: 30px;
+  }
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/* 02. Forms
+ --------------------------------------------------------------------------------*/
+
+/* Comment form */
+form#comment-form button#edit-submit {
+  float: left;
+  margin-left: 0;
+}
+
+.indented article.comment {
+  margin-left: 0;
+  margin-right: 15%;
+}
+
+/* Sitewide search form */
+.stack-search #search-block-form .input-group input {
+  padding-right: 5%;
+  padding-left: 0;
+  float: right;
+} 
+.stack-search #search-block-form .input-group-btn {
+  padding-left: 0;
+  padding-right: 5%;
+}
+
+/* Contact form */
+@media all and (min-width: 768px) {
+  #block-sitewidecontactform .form-type-textfield {
+    margin-right: 0;
+    margin-left: 4%;
+  }
+  #block-sitewidecontactform .form-item label {
+    float: right;
+  }
+  #block-sitewidecontactform button[type=submit] {
+    float: right;
+    margin-right: 0;
+    margin-left: -0.5px;
+  }
+}
+
+/* Register form */
+.register-horizontal #user-register-form .form-item {
+  float: right;
+  margin-right: 0;
+  margin-left: 5%;
+}
+
+
+/* Subscribe form */
+.tooltip-inner {
+  float: right;
+}
+@media all and (min-width: 768px) {
+  .subscribe-inline #block-simplenewssubscription .field--type-email {
+    float: right;
+  }
+  .subscribe-inline #block-simplenewssubscription #edit-actions {
+    float: right;
+    margin-left: 0;
+    margin-right: 3%;
+  }
+  body.user-logged-in .subscribe-inline #block-simplenewssubscription #edit-actions {
+    margin-right: 0;
+  }
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/* 03. Blog & Article
+ --------------------------------------------------------------------------------*/
+
+/* Article Detail */
+.field--name-field-tags .field--item {
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+/* Blog Tags */
+.view-blog-tags .views-row {
+  padding-right: 0;
+  margin-left: 10px;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+/* 05. Others
+ --------------------------------------------------------------------------------*/
+
+/* Nav Tab */
+.user-logged-in nav.tabs {
+  right: 0;
+  left: auto;
+} 
+.user-logged-in nav.tabs ul.tabs--primary li a {
+  margin-left: 0;
+}

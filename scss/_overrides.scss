@@ -20,14 +20,65 @@ img {
   background-size: cover;
 }
 
-nav.navbar {
-  background: $white;
+hr {
+  margin: 1rem;
 }
 
-.dropdown-item {
-  color: $black !important;
+.alert svg {
+  max-width: 2rem;
+  height: 2rem;
 }
 
-.title-wrapper {
-  min-height: 500px;
+img {
+  max-width: 100%;
+  height: auto;
+
+  &.align-left {
+    padding-right: 15px;
+  }
+}
+.display-1 {
+  font-size: calc(1.3rem + 1.3vw);
+}
+.display-2 {
+  font-size: calc(1rem + 1.14vw);
+}
+
+h1.title,
+.title.h1 {
+  font-weight: 300;
+  @include media-breakpoint-between(md, lg) {
+    font-size: 3rem !important;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 4rem !important;
+  }
+}
+
+.item-list ul li {
+  list-style: disc;
+}
+
+.hamburger {
+  margin-top: 12px !important;
+  @include media-breakpoint-down(sm) {
+    padding-right: 20px !important;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .banner {
+    .image-wrapper {
+      min-height: 290px;
+    }
+  }
+}
+
+.page-title {
+  margin-top: 15px;
+}
+
+.breadcrumb {
+  line-height: 1rem !important;
 }

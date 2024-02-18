@@ -1,45 +1,140 @@
-# Library.
-# ----------------------------
-bootstrap_barrio_library: 'production'
-# Layout.
-# ----------------------------
-bootstrap_barrio_sidebar_position: 'both'
-bootstrap_barrio_content_offset: 0
-bootstrap_barrio_sidebar_first_width: 4
-bootstrap_barrio_sidebar_first_offset: 0
-bootstrap_barrio_sidebar_second_width: 3
-bootstrap_barrio_sidebar_second_offset: 0
-
-# Container.
-# ----------------------------
+_core:
+  default_config_hash: w2HQYJGLG4-Mmk19eIIKgoXCiXEJm-NVSNhhv-VdpUI
+favicon:
+  use_default: 1
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  use_default: 1
+bootstrap_barrio_library: production
+bootstrap_barrio_source: bootstrap_barrio/bootstrap
 bootstrap_barrio_fluid_container: 0
-
-# Buttons.
-# ----------------------------
-bootstrap_barrio_button: 1
-bootstrap_barrio_button_size: ''
+bootstrap_barrio_container: container
+bootstrap_barrio_region_clean_highlighted: 1
+bootstrap_barrio_region_class_highlighted: ''
+bootstrap_barrio_region_clean_content: 1
+bootstrap_barrio_region_class_content: ''
+bootstrap_barrio_region_clean_sidebar_first: 1
+bootstrap_barrio_region_class_sidebar_first: ''
+bootstrap_barrio_region_clean_sidebar_second: 1
+bootstrap_barrio_region_class_sidebar_second: ''
+bootstrap_barrio_sidebar_position: both
+bootstrap_barrio_content_offset: '0'
+bootstrap_barrio_sidebar_collapse: 1
+bootstrap_barrio_sidebar_first_width: '3'
+bootstrap_barrio_sidebar_first_offset: '0'
+bootstrap_barrio_sidebar_second_width: '3'
+bootstrap_barrio_sidebar_second_offset: '0'
+bootstrap_barrio_hide_node_label: 1
+bootstrap_barrio_breadcrumb_divider: '>>>>>'
+bootstrap_barrio_button: 0
+bootstrap_barrio_button_size: btn-sm
+bootstrap_barrio_button_type: primary
 bootstrap_barrio_button_outline: 0
-
-# Navbar.
-# ----------------------------
-bootstrap_barrio_navbar_toggle: 'navbar-toggleable-lg'
-bootstrap_barrio_navbar_container: ''
+bootstrap_barrio_navbar_container: 0
+bootstrap_barrio_navbar_toggle: navbar-toggleable-lg
+bootstrap_barrio_navbar_top_navbar: 0
+bootstrap_barrio_navbar_top_class: ''
+bootstrap_barrio_navbar_class: ''
 bootstrap_barrio_navbar_top_position: ''
 bootstrap_barrio_navbar_top_color: ''
-bootstrap_barrio_navbar_top_background: ''
+bootstrap_barrio_navbar_top_background: bg-light
 bootstrap_barrio_navbar_position: ''
-bootstrap_barrio_navbar_color: ''
+bootstrap_barrio_navbar_color: navbar-light
 bootstrap_barrio_navbar_background: ''
-
-# Messages.
-# ----------------------------
-bootstrap_barrio_messages_widget: 'alerts'
-
-# Colors.
-# ----------------------------
-bootstrap_barrio_system_messages: 'messages_white'
-
-# Tables.
-# ----------------------------
-bootstrap_barrio_table_hover: 1
-bootstrap_barrio_table_style: 'table-striped'
+bootstrap_barrio_navbar_flyout: 1
+bootstrap_barrio_navbar_slide: 0
+bootstrap_barrio_navbar_offcanvas: ''
+bootstrap_barrio_messages_widget: alerts
+bootstrap_barrio_float_label: 0
+bootstrap_barrio_checkbox: ''
+bootstrap_barrio_navbar_top_affix: 1
+bootstrap_barrio_navbar_affix: 0
+bootstrap_barrio_sidebar_first_affix: 0
+bootstrap_barrio_sidebar_second_affix: 0
+bootstrap_barrio_scroll_spy: ''
+bootstrap_barrio_google_fonts: space
+bootstrap_barrio_bootstrap_icons: 0
+bootstrap_barrio_icons: fontawesome
+bootstrap_barrio_system_messages: messages_white
+bootstrap_barrio_table_style: table-striped
+bootstrap_barrio_table_hover: 0
+bootstrap_barrio_table_head: ''
+bootstrap_barrio_image_fluid: 0
+bootstrap_barrio_tabs_style: ''
+bootstrap_barrio_enable_color: 1
+bootstrap_barrio_base_primary_color: '#0f138f'
+bootstrap_barrio_base_secondary_color: '#3eb18f'
+bootstrap_barrio_body_color: black
+bootstrap_barrio_body_bg_color: white
+bootstrap_barrio_h1_color: primary
+bootstrap_barrio_h2_color: secondary
+bootstrap_barrio_h3_color: base
+bootstrap_barrio_region_clean_top_bar: 0
+bootstrap_barrio_region_width_top_bar: 0
+bootstrap_barrio_region_class_top_bar: row
+bootstrap_barrio_region_clean_branding: 0
+bootstrap_barrio_region_width_branding: 0
+bootstrap_barrio_region_class_branding: row
+bootstrap_barrio_region_clean_navigation: 1
+bootstrap_barrio_region_width_navigation: 0
+bootstrap_barrio_region_class_navigation: row
+bootstrap_barrio_region_clean_navigation_collapsible: 0
+bootstrap_barrio_region_width_navigation_collapsible: 0
+bootstrap_barrio_region_class_navigation_collapsible: row
+bootstrap_barrio_region_clean_navigation_other: 0
+bootstrap_barrio_region_width_navigation_other: 0
+bootstrap_barrio_region_class_navigation_other: row
+bootstrap_barrio_region_clean_title: 0
+bootstrap_barrio_region_width_title: 0
+bootstrap_barrio_region_class_title: row
+bootstrap_barrio_region_width_highlighted: 0
+bootstrap_barrio_region_clean_help: 0
+bootstrap_barrio_region_width_help: 0
+bootstrap_barrio_region_class_help: row
+bootstrap_barrio_region_width_content: 0
+bootstrap_barrio_region_width_sidebar_first: 0
+bootstrap_barrio_region_width_sidebar_second: 0
+bootstrap_barrio_region_clean_footer_1: 0
+bootstrap_barrio_region_width_footer_1: 0
+bootstrap_barrio_region_class_footer_1: bg-primary
+bootstrap_barrio_region_clean_footer_2: 0
+bootstrap_barrio_region_width_footer_2: 0
+bootstrap_barrio_region_class_footer_2: row
+bootstrap_barrio_region_clean_footer_3: 0
+bootstrap_barrio_region_width_footer_3: 0
+bootstrap_barrio_region_class_footer_3: row
+bootstrap_barrio_region_clean_footer_4: 0
+bootstrap_barrio_region_width_footer_4: 0
+bootstrap_barrio_region_class_footer_4: row
+bootstrap_barrio_region_clean_copyright: 0
+bootstrap_barrio_region_width_copyright: 0
+bootstrap_barrio_region_class_copyright: row
+bootstrap_barrio_region_clean_disabled: 0
+bootstrap_barrio_region_width_disabled: 0
+bootstrap_barrio_region_class_disabled: row
+theme_menu: menu_dark
+theme_color: violet
+base_primary_color: '#00539C'
+base_secondary_color: '#EEA47F'
+body_color: gray-800
+body_bg_color: purple_mint
+h1_color: primary
+h2_color: secondary
+h3_color: base
+footer_classes: bg-dark
+theme_font: fontthiccboi
+handy_base_primary_color: '#a60707'
+handy_base_secondary_color: '#1b6f29'
+handy_body_color: gray-800
+handy_body_bg_color: white
+handy_h1_color: primary
+handy_h2_color: secondary
+handy_h3_color: base
+handy_system_messages: ''
+handy_enable_color: 1
+theme_footer: menu_light
+navbar: ''

@@ -49,9 +49,6 @@ $value in $theme-colors {
   $background: shift-color($value, $alert-bg-scale);
   $border: shift-color($value, $alert-border-scale);
   $color: shift-color($value, $alert-color-scale);
-  /*.alert-#{$state} {
-    @include alert-variant($background, $border, $color);
-  }*/
 }
 .alert[class*="bg-"] {
   padding: 0.8rem 0;

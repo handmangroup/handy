@@ -5,7 +5,10 @@ core_version_requirement: ^9 || ^10
 base theme: bootstrap_barrio
 
 libraries:
+  - handy/bootstrap
   - handy/global-styling
+  - bootstrap_barrio/global-styling
+
 
 regions:
   top_bar: 'Top bar'

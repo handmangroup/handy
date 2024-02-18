@@ -17,6 +17,8 @@ dependencies:
     - image
     - imce
     - text
+_core:
+  default_config_hash: bn3TAWgnDxTTf_uEX7tIj3ohrQclrRVv6_J6-w4E_3c
 id: paragraph.paragraph_card.default
 targetEntityType: paragraph
 bundle: paragraph_card

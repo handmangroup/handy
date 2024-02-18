@@ -9,9 +9,11 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: xagQeFdrwpoFMA8CPT9kv8pEjM93X-X77qkvPilcnhU
 name: 'Landing Page'
 type: landing_page
-description: ''
+description: 'Use for utilizing Paragraphs Layouts for controlling page layout and content.'
 help: ''
 new_revision: true
 preview_mode: 1

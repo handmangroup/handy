@@ -51,7 +51,7 @@
   //////////////// Accordion - Click to open/collapse
   Drupal.behaviors.Accordion = {
     attach: function (context, settings) {
-      $('.accordion-title').on('click', function(){
+      $('.accordion-title').click(function(){
         var accordion = $(this).closest('.accordion');
         var li = $(this).closest('li');
         if (li.hasClass('active')) {
@@ -60,7 +60,7 @@
           if (accordion.hasClass('accordion-oneopen')){
             var wasActive = accordion.find('li.active');
             wasActive.removeClass('active');
-            li.addClass('active');
+           (li).addClass('active');
           } else {
             li.addClass('active');
           }
@@ -140,6 +140,24 @@
             $(label).remove();
         }
       });
+    }
+  };
+
+  //////////////// Menus and Dropdowns
+  Drupal.behaviors.Dropdowns = {
+    attach: function (context, settings) {
+      $('.dropdown-menu').each(function() {
+       if($(this).parents('nav.navbar').hasClass('navbar-bg-dark')) {
+        $(this).addClass('dropdown-menu-dark');
+      }
+      });
+      $('nav.navbar').each(function() {
+        if ($(this).hasClass('bg-primary')) {
+          $(this).find('ul li a').addClass('text-bg-primary');
+        }
+
+      });
+
     }
   };
 

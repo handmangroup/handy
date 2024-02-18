@@ -5,50 +5,90 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\image\Entity\ImageStyle;
-
-/**
- * Implements hook_form_system_theme_settings_alter() for settings form.
- *
- * Replace Barrio setting options with subtheme ones.
- *
- * Example on how to alter theme settings form
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Link;
+use Drupal\Component\Utility\Xss;
+use Drupal\node\Entity\Node;
+use Drupal\Component\Render\MarkupInterface;
 
 
-function handy_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  ];
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  ];
+function handy_preprocess_html(&$variables)
+{
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $internal = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['attributes']['class'][] = str_replace("/", " ", $internal);
+
+  // Color settings
+  if (theme_get_setting('bootstrap_barrio_enable_color')) {
+    $variables['#attached']['library'][] = 'handy/colors';
+
+      // CSS variables
+      $gray200 = '#e9ecef';
+      $gray800 = '#343a40';
+      $white = '#fff';
+      $pc = theme_get_setting('bootstrap_barrio_base_primary_color') ?? '#2F3C7E';
+      $pcrgb = _hex2rgb( $pc );
+      $pcd = _color_luminance($pc, -0.15);
+      $bc = '#000';
+      $pct = _getContrastColor($pc, $white, $bc);
+      $sc = theme_get_setting('bootstrap_barrio_base_secondary_color') ?? '#FBEAEB';
+      $scrgb = _hex2rgb( $sc );
+      $scd = _color_luminance($sc, -0.15);
+      $color = theme_get_setting('bootstrap_barrio_body_color') ?? '#000';
+      $color = ($color == 'gray-800') ? $gray800 : '#000';
+      $bg = theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white';
+      $bg = ($bg == 'gray-200') ? $gray200 : $white;
+      $h1 = theme_get_setting('bootstrap_barrio_h1_color') ?? $color;
+      $h1 = ($h1 == 'primary') ? $pc : $h1;
+      $h1 = ($h1 == 'secondary') ? $sc : $h1;
+      $h2 = theme_get_setting('bootstrap_barrio_h2_color') ?? $color;
+      $h2 = ($h2 == 'primary') ? $pc : $h2;
+      $h2 = ($h2 == 'secondary') ? $sc : $h2;
+      $h3 = theme_get_setting('bootstrap_barrio_h3_color') ?? 'base';
+      $h3 = ($h3 == 'primary') ? $pc : $h3;
+      $h3 = ($h3 == 'secondary') ? $sc : $h3;
+      $styles = [
+        "--bs-primary:$pc;",
+        "--bb-primary-dark:$pcd;",
+        "--bb-primary-light:$pct;",
+        "--bs-primary-rgb:$pcrgb;",
+        "--bs-secondary:$sc;",
+        "--bb-secondary-dark:$scd;",
+        "--bs-secondary-rgb:$scrgb;",
+        "--bs-link-color:$pc;",
+        "--bs-link-hover-color:$pcd;",
+        "--bs-body-color:$color;",
+        "--bs-body-bg:$bg;",
+        "--bb-h1-color:$h1;",
+        "--bb-h2-color:$h2;",
+        "--bb-h3-color:$h3;",
+      ];
+      $variables['html_attributes']->setAttribute('style', implode('', $styles));
+    }
 }
- */
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+
 function handy_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // Enable 'page_fullwidth' for nodes
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
 	if(!is_object($node)) {
-      		$node = \Drupal\node\Entity\Node::load($node);
-    	}
+    $node = \Drupal\node\Entity\Node::load($node);
+  }
     $content_type = $node->bundle();
-    if ($content_type == 'landing_page' or $content_type == 'article' or $content_type == 'project') {
-	  $suggestions[] = 'page__fullwidth';
-	}
+    if ($content_type == 'landing_page') {
+      $suggestions[] = 'page__fullwidth';
+    }
   }
 
   // Enable 'page_fullwidth' for user profile
@@ -66,22 +106,27 @@ function handy_theme_suggestions_page_alter(array &$suggestions, array $variable
 /**
  * Add color, menu and theme settings
  */
-function handy_preprocess_page(&$variables) {
-  $color = theme_get_setting('theme_color');
-  if ($color != 'default') {
-    $variables['#attached']['library'][] = 'handy/'.$color.'-styling';
-  }
-  // Theme menu
+function handy_preprocess_page(&$variables)
+{
   $menu = theme_get_setting('theme_menu');
   $variables['mainmenu_class'] = '';
   if($menu == 'menu_light') {
     $variables['mainmenu_class'] = 'navbar-light navbar-bg-light';
   }
   elseif($menu == 'menu_dark') {
-    $variables['mainmenu_class'] = 'navbar-dark navbar-bg-dark';
+    $variables['mainmenu_class'] = 'navbar-dark navbar-bg-dark text-bg-dark';
+  }
+  elseif($menu == 'bg-primary') {
+    $variables['mainmenu_class'] = 'bg-primary text-bg-primary';
+  }
+  elseif($menu == 'bg-secondary') {
+    $variables['mainmenu_class'] = 'bg-secondary text-bg-primary';
+  }
+  elseif($menu == 'bg-gray') {
+    $variables['mainmenu_class'] = 'bg-gray';
   }
   else {
-    $variables['mainmenu_class'] = 'navbar-default';
+    $variables['mainmenu_class'] = 'navbar-light navbar-bg-light';
   }
 
   // Theme footer
@@ -91,35 +136,40 @@ function handy_preprocess_page(&$variables) {
   $variables['mainmenu_transparent'] = '';
   $variables['mainmenu_absolute'] = '';
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    //var_dump($node);
     if ($node->hasField('field_mainmenu_transparent')) {
-	  $mainmenu_transparent = $node->get('field_mainmenu_transparent')->getValue();
-	  if($mainmenu_transparent[0]['value']) {
-	    $variables['mainmenu_transparent'] = 'transparent';
-	  }
+      $mainmenu_transparent = $node->get('field_mainmenu_transparent')->getValue();
+      if($mainmenu_transparent[0]['value']) {
+        $variables['mainmenu_transparent'] = 'transparent';
+      }
     }
     if ($node->hasField('field_mainmenu_absolute')) {
-	  $mainmenu_absolute = $node->get('field_mainmenu_absolute')->getValue();
-	  if($mainmenu_absolute[0]['value']) {
-	    $variables['mainmenu_absolute'] = 'navbar-absolute';
-	  }
+      $mainmenu_absolute = $node->get('field_mainmenu_absolute')->getValue();
+      if($mainmenu_absolute[0]['value']) {
+        $variables['mainmenu_absolute'] = 'navbar-absolute';
+      }
     }
     if ($node->hasField('field_extra_class')) {
-	  $extra_class = $node->get('field_extra_class')->getValue();
-	  if($extra_class[0]['value']) {
-	    $variables['extra_class'] = $extra_class[0]['value'];
-	  }
+      $extra_class = $node->get('field_extra_class')->getValue();
+      if($extra_class[0]['value']) {
+        $variables['extra_class'] = $extra_class[0]['value'];
+      }
     }
   }
+
+  //Fonts
+  $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
+  if ($fonts) {
+    $variables['#attached']['library'][] = 'handy/' . $fonts;
+  }
+
 
   // Check node's view mode, if it is full_content_title_image, set mainmenu to be transparent
   if (!empty($variables['node']) && $variables['node']->current_view_mode == 'full_content_title_image') {
     $variables['mainmenu_transparent'] = 'transparent';
   }
-
-
-
 }
+
+
 
 /**
  * Process block content
@@ -140,8 +190,10 @@ function handy_preprocess_node(array &$variables, $hook) {
     $node->current_view_mode = $variables['view_mode'];
     $variables['current_view_mode'] = $node->current_view_mode;
   }
-
-
+  // Hide label on all nodes
+  if (theme_get_setting('bootstrap_barrio_hide_node_label') != NULL) {
+    unset($variables['label']);
+  }
 }
 
 /**
@@ -150,3 +202,4 @@ function handy_preprocess_node(array &$variables, $hook) {
 function handy_form_search_block_form_alter(&$form, FormStateInterface $form_state) {
   $form['keys']['#attributes']['placeholder'] = t('Type keyword and hit enter');
 }
+

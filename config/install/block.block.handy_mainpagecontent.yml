@@ -6,10 +6,12 @@ dependencies:
     - system
   theme:
     - handy
+_core:
+  default_config_hash: L0y8H9CNSn3JDMFrYISuDFWlbvRBREBOXeY0xqrVMzA
 id: handy_mainpagecontent
 theme: handy
 region: content
-weight: 0
+weight: -5
 provider: null
 plugin: system_main_block
 settings:

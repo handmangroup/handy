@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.paragraph_tabs
   module:
     - paragraphs
+_core:
+  default_config_hash: 2IVPL4JJq7MNPOXckh4yWNGNo43evlLGejfT0mRw0pQ
 id: paragraph.paragraph_tabs.default
 targetEntityType: paragraph
 bundle: paragraph_tabs

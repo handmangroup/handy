@@ -11,6 +11,8 @@ dependencies:
   module:
     - layout_paragraphs
     - path
+_core:
+  default_config_hash: J_dvKKoYRmO0qWZuknezeLg9t4-gCIURXhkBLpeFMD8
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page

@@ -19,6 +19,8 @@ dependencies:
     - image
     - imce
     - text
+_core:
+  default_config_hash: Tykcbj1KaMJBoSu-jpOp8E4kh2CAwrEt_c0WoM2JKDY
 id: paragraph.paragraph_section_image_bg.default
 targetEntityType: paragraph
 bundle: paragraph_section_image_bg

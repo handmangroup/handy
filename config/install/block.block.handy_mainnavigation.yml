@@ -8,10 +8,12 @@ dependencies:
     - system
   theme:
     - handy
+_core:
+  default_config_hash: XfF2PwhujUMsML1k97nF1N_wfBtOgzrBQPCPJg4NWBY
 id: handy_mainnavigation
 theme: handy
 region: navigation_collapsible
-weight: -2
+weight: -9
 provider: null
 plugin: 'system_menu_block:main'
 settings:

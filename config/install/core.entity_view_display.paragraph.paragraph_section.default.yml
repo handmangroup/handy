@@ -18,6 +18,8 @@ dependencies:
   module:
     - options
     - text
+_core:
+  default_config_hash: u4ctZheHic9foMWf_QApe3Mv8svO0kBcP81e7XyxHyY
 id: paragraph.paragraph_section.default
 targetEntityType: paragraph
 bundle: paragraph_section

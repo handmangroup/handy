@@ -13,6 +13,8 @@ dependencies:
     - image
     - imce
     - text
+_core:
+  default_config_hash: sXJoHHa2GuoytQPzBiejKNB6MbhBiQD-4SnwYnKF4Vk
 id: paragraph.paragraph_slider_item.default
 targetEntityType: paragraph
 bundle: paragraph_slider_item

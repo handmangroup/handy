@@ -18,6 +18,8 @@ dependencies:
     - image
     - options
     - text
+_core:
+  default_config_hash: YF3Hzv-vN3Jd4MHOPRfuu5jpEC3jBIYyk-DHJ1ZY3LE
 id: paragraph.paragraph_section_image_bg.default
 targetEntityType: paragraph
 bundle: paragraph_section_image_bg

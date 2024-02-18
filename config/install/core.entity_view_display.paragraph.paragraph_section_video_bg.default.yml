@@ -11,6 +11,8 @@ dependencies:
   module:
     - file
     - image
+_core:
+  default_config_hash: VidT3Lmcd24DAsM7Fg49i-1Vege0Wg57rMJ8zon8Bwc
 id: paragraph.paragraph_section_video_bg.default
 targetEntityType: paragraph
 bundle: paragraph_section_video_bg

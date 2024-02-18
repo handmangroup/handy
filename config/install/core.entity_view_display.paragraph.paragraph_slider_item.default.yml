@@ -11,6 +11,8 @@ dependencies:
   module:
     - image
     - text
+_core:
+  default_config_hash: tkF6WxbgV58DpzY4mL5mN4U929oi4wldImDYwoR2F5s
 id: paragraph.paragraph_slider_item.default
 targetEntityType: paragraph
 bundle: paragraph_slider_item

@@ -65,8 +65,11 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
+
+
+{{ attach_library('bootstrap_barrio/node') }}
+
+ {% set classes = [
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.bundle|clean_class,
@@ -103,8 +106,8 @@
   {% endif %}
 
 
-      <div{{ content_attributes.addClass('content') }}>
-    {{ content|without('field_mainmenu_transparent','field_mainmenu_absolute','field_extra_class', 'field_banner_background_image') }}
+  <div{{ content_attributes.addClass('node__content', 'clearfix', 'content') }}>
+    {{ content|without('field_mainmenu_transparent','field_mainmenu_absolute','field_extra_class') }}
     </div>
 
 </article>
