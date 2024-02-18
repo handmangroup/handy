@@ -1,20 +1,20 @@
-uuid: d0c23358-2e1b-4b0b-b006-ee13017fe3a8
+uuid: 85ef7340-79ee-4bb5-a46c-e77c2c2c46ea
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - node.type.project
+    - field.storage.user.user_picture
   module:
     - image
+    - user
 _core:
-  default_config_hash: VOJ_kHfOVCSll1VARAmhT6c-YGfASxph5Xyo1gqxZZ4
-id: node.project.field_image
-field_name: field_image
-entity_type: node
-bundle: project
-label: 'Project Image'
-description: ''
+  default_config_hash: TE3gYVzd6g0deXqUl8SEu2azHwVG-SdXm3kwbrz0kHw
+id: user.user.user_picture
+field_name: user_picture
+entity_type: user
+bundle: user
+label: Picture
+description: 'Your virtual face or picture.'
 required: false
 translatable: true
 default_value: {  }
@@ -22,17 +22,17 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: img
-  file_extensions: 'png gif jpg jpeg'
+  file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: null
     alt: ''
     title: ''
     width: null

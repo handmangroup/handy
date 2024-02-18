@@ -1,0 +1,14 @@
+uuid: baa2df0c-4e76-4a0e-ae84-7cc0e311ed1a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - jill@handmangroup.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

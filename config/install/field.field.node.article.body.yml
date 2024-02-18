@@ -1,19 +1,19 @@
-uuid: ce43ec0c-f639-4a2c-9204-d8eebd20ffd7
+uuid: 353f35ab-8b3d-4cab-8a80-fec15cf03ee4
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.project
+    - node.type.article
   module:
     - text
 _core:
-  default_config_hash: IxE9Va9kGVfg4WSwKzcgil3lOrjL3uSeaX2N6ET2ZYw
-id: node.project.body
+  default_config_hash: 4Wxs1LseZ8JsNwD9uJVIbzZqG35yQXN8Eo1Hub6NMuI
+id: node.article.body
 field_name: body
 entity_type: node
-bundle: project
-label: 'Project About'
+bundle: article
+label: Body
 description: ''
 required: false
 translatable: true
