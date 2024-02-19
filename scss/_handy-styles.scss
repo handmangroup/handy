@@ -211,16 +211,6 @@ h1.title {
   }
 }
 
-.node.edit {
-  #navbar-main {
-    position: relative;
-  }
-}
-
-#navbar-main {
-  position: fixed;
-}
-
 .dropdown-menu li.active>a {
   color: var(--bs-dropdown-link-active-color) !important;
 }

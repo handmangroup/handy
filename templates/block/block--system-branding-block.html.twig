@@ -19,7 +19,7 @@
 <div class="site-branding">
   {% if site_logo %}
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-	    <img class="logo mb-2" src="{{ base_path }}/{{ active_theme_path() }}/logo.png" alt="{{ 'Home'|t }}" />
+	    <img class="logo mb-2" src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
     </a>
   {% endif %}
   {% if site_name %}
