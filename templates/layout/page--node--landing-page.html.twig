@@ -114,19 +114,15 @@
     {# Title #}
     {% if page.title  %}
       <section class="wrapper bg-light title-wrapper">
-        <div class="container text-center">
+        <div class="container space-0 text-center">
           <div class="row">
             <div class="col-md-8 col-lg-7 col-xl-6 mx-auto mt-5">
-              {# Title #}
               {% block title %}
                 {{ page.title }}
               {% endblock %}
             </div>
-            <!-- /column -->
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
     {% endif %}
     <!--end title-->
