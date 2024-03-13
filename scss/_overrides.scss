@@ -82,3 +82,9 @@ h1.title,
 .breadcrumb {
   line-height: 1rem !important;
 }
+
+.container-fluid {
+  .row > * {
+    padding: 0;
+  }
+}
