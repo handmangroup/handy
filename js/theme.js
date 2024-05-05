@@ -20,7 +20,6 @@ var theme = {
     theme.imageHoverOverlay();
     theme.rellax();
     theme.scrollCue();
-    theme.swiperSlider();
     theme.lightbox();
     theme.plyr();
     theme.progressBar();
