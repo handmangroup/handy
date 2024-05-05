@@ -13,15 +13,6 @@ global-styling:
   dependencies:
     - core/jquery
     - core/once
-bootstrap:
-  js:
-    /libraries/bootstrap/dist/js/bootstrap.min.js: { weight: -20 }
-    /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }
-  css:
-    component:
-      /libraries/bootstrap/dist/css/bootstrap.min.css: {}
-  dependencies:
-    - core/popperjs
 bootstrap_cdn:
   js:
     //cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js: {}
