@@ -1,0 +1,22 @@
+uuid: c06dd575-6e24-4da8-a85e-d05dff887852
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - handy
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: handy_help
+theme: handy
+region: highlighted
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: b666b18b-d755-4b55-99df-e66b9bb38dc0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - handy
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: handy_primary_local_tasks
+theme: handy
+region: highlighted
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 9548d62f-4723-47fe-ba46-d05637acded9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - handy
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: handy_primary_admin_actions
+theme: handy
+region: highlighted
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

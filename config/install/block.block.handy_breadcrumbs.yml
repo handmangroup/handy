@@ -1,0 +1,22 @@
+uuid: e05f37cf-06fc-4de7-a622-3f0a3e8918c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - handy
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: handy_breadcrumbs
+theme: handy
+region: content
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
