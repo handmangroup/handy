@@ -78,12 +78,13 @@
 
           <nav{{ attributes.addClass(navbar_classes) }} id="navbar-main">
             <div class="{{ container }} flex-lg-row flex-nowrap align-items-center">
-              <div class="navbar-brand d-flex">
+              <div class="navbar-brand">
                 {{ page.branding }}
-                <div class="d-lg-none ms-auto">
-                  <button class="hamburger offcanvas-nav-btn ms-auto"><span></span></button>
-                </div>
               </div>
+              <div class="d-lg-none ms-auto">
+                <button class="hamburger offcanvas-nav-btn ms-auto"><span></span></button>
+              </div>
+
               <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
                   <h3 class="text-white fs-30 mb-0">Handy</h3>
@@ -97,7 +98,7 @@
                 </div>
               </div>
               {% if page.navigation_other %}
-                <div class="navbar-other w-100 d-flex ms-auto">
+                <div class="navbar-other d-flex ms-auto">
                   {{ page.navigation_other }}
                 </div>
               {% endif %}
@@ -156,8 +157,8 @@
     {% endblock %}
 
 
-<!--end main-->
-{# Footer #}
+    <!--end main-->
+    {# Footer #}
 
     {% block footer %}
       <footer class="{{ footer_classes }} site-footer">
@@ -182,8 +183,8 @@
         </div>
       </footer>
     {% endblock %}
-<!--end footer-->
-</div>
+    <!--end footer-->
+  </div>
 </div>
 
 {# Scroll progress #}
