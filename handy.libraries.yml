@@ -7,7 +7,6 @@ global-styling:
   js:
     js/plugins.js: {}
     js/theme.js: {}
-    js/swiper.js: {}
     js/affix.js: {}
     js/global.js: {}
   dependencies:
