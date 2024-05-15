@@ -1,18 +1,17 @@
 {
-  "name": "nubay/handytheme",
+  "name": "handmangroup/handytheme",
   "description": "Handy Theme for Drupal 9+",
   "type": "drupal-theme",
-  "homepage": "https://github.com/Nubay-Services/HandyTheme",
+  "homepage": "https://github.com/handmangroup/handy",
   "authors": [
     {
       "name": "Jill Handman",
-      "homepage": "https://nubay.org",
       "role": "Maintainer"
     }
   ],
   "support": {
-    "issues": "https://github.com/Nubay-Services/HandyTheme",
-    "source": "https://github.com/Nubay-Services/HandyTheme.git"
+    "issues": "https://github.com/handmangroup/handy",
+    "source": "https://github.com/handmangroup/handy.git"
   },
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
