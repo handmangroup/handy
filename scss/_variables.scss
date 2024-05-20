@@ -451,7 +451,7 @@ $input-border-radius-lg: $input-border-radius !default;
 $form-check-input-width: 1.05rem !default;
 $form-check-padding-start: $form-check-input-width + .5rem !default;
 $form-check-input-bg: $body-bg !default;
-$form-check-input-border: 1px solid rgba($shadow-border, 0.1) !default;
+$form-check-input-border: 1px solid rgba($shadow-border, 0.5) !default;
 $form-check-input-checked-color: $component-active-color !default;
 $form-check-input-checked-bg-color: $component-active-bg !default;
 $form-check-input-checked-border-color: $form-check-input-checked-bg-color !default;

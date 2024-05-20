@@ -71,3 +71,9 @@ img {
     padding: 0;
   }
 }
+
+.exclude-node-title {
+  .node__content {
+    margin-top: 0;
+  }
+}
