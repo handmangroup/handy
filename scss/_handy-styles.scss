@@ -13,6 +13,7 @@ $background-color_2: black;
 $border-color_1: #4a90e2;
 
 body {
+  font-size: $font-size-base !important;
   margin-top: 0;
 }
 ol.process-3 {
@@ -21,6 +22,7 @@ ol.process-3 {
 
 /**! Typography **/
 h1 {
+  font-size: $h1-font-size;
   &:not(:last-child) {
     margin-bottom: 1.25rem;
   }
@@ -160,11 +162,7 @@ ul.list-inline {
     color: $color_3;
   }
 }
-h1.title {
-  font-size: calc(1.365rem + 1.38vw);
-  line-height: 1.2;
-  margin-bottom: 0.75rem !important;
-}
+
 .text-inverse {
   h1 {
     color: $color_2;
@@ -829,6 +827,15 @@ a.page-link {
 }
 
 /**! Forms **/
+
+.form-actions {
+  align-self: flex-end;
+  max-width: 80px;
+}
+
+.form-control {
+  border: 1px solid rgba(8, 60, 130, 0.5);
+}
 button#edit-submit {
   background: #4a90e2;
   border-color: $border-color_1;
@@ -1759,9 +1766,7 @@ input#edit-submit {
   }
 }
 @media (min-width: 1200px) {
-  h1.title {
-    font-size: 4.4rem;
-  }
+
   section.sticky-column-first {
     >[class*=container] {
       >.row {

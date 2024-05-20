@@ -62,6 +62,55 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     '#disabled' => TRUE,
   ];
 
+  $form['page_title'] = array(
+    '#type' => 'details',
+    '#title' => t('Page Title Options'),
+    '#group' => 'bootstrap',
+  );
+
+  $form['page_title']['tabs']['title_config'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Page Title Style'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $form['page_title']['tabs']['title_config']['title_size'] = [
+    '#type' => 'select',
+    '#title' => t('Title Font Size'),
+    '#default_value' => theme_get_setting('title_size'),
+    '#options'  => array(
+      'fs-45'	=> t('Smaller'),
+      'title'	=> t('Default'),
+      'fs-75'	=> t('Larger'),
+      'fs-100'	=> t('Extra Large'),
+    ),
+  ];
+
+  $form['page_title']['tabs']['title_config']['title_weight'] = [
+    '#type' => 'select',
+    '#title' => t('Title Font Weight'),
+    '#default_value' => theme_get_setting('title_weight'),
+    '#options'  => array(
+      'fw-lighter'	=> t('Lighter'),
+      'fw-light'	=> t('Light'),
+      'fw-normal'	=> t('Normal'),
+      'fw-bold'	=> t('Bold'),
+      'fw-bolder'	=> t('Bolder'),
+    ),
+  ];
+
+  $form['page_title']['tabs']['title_config']['title_alignment'] = [
+    '#type' => 'select',
+    '#title' => t('Title Alignment'),
+    '#default_value' => theme_get_setting('title_alignment'),
+    '#options'  => array(
+      'text-start'	=> t('Left'),
+      'text-center'	=> t('Center'),
+      'text-end'	=> t('Right'),
+    ),
+  ];
+
   $form['fonts']['fonts']['bootstrap_barrio_google_fonts'] = [
     '#type' => 'select',
     '#title' => t('Google Fonts combination'),

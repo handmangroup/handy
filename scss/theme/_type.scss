@@ -250,7 +250,7 @@ blockquote {
     margin: 0 1rem 0 0;
     display: inline;
     color: $headings-color;
-    font-weight: $headings-font-weight; 
+    font-weight: $headings-font-weight;
   }
   ul {
     margin: 0;
@@ -486,12 +486,12 @@ pre {
 //----------------------------------------------------------//
 //	DOCS
 //----------------------------------------------------------//
-.external, 
+.external,
 .internal,
-.code, 
+.code,
 .terminal,
-.kbd, 
-.folder, 
+.kbd,
+.folder,
 .file,
 mark.doc {
   font-family: $font-family-monospace;
@@ -513,12 +513,12 @@ mark.doc {
   padding: $mark-padding;
   padding-bottom: 0.05rem;
 }
-.external:after, 
-.internal:after, 
-.code:before, 
+.external:after,
+.internal:after,
+.code:before,
 .terminal:before,
-.kbd:before, 
-.folder:before, 
+.kbd:before,
+.folder:before,
 .file:before {
   position: absolute;
   left: 0;

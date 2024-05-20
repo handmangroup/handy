@@ -113,16 +113,12 @@
     </header>
 
     {# Title #}
-    {% if page.title  %}
-      <section class="wrapper bg-light title-wrapper">
-        <div class="container space-0 text-center">
-          <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-6 mx-auto mt-5">
-              {% block title %}
+    {% if page.title %}
+      <section class="wrapper title-wrapper">
+        <div class={{ title_alignment }}>
+             {% block title %}
                 {{ page.title }}
               {% endblock %}
-            </div>
-          </div>
         </div>
       </section>
     {% endif %}
