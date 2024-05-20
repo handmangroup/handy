@@ -129,6 +129,10 @@ function handy_preprocess_page(&$variables)
     $variables['mainmenu_class'] = 'navbar-light navbar-bg-light';
   }
 
+  //Theme Page Title
+  $variables['title_alignment'] = theme_get_setting('title_alignment');
+
+
   // Theme footer
   $variables['footer_classes'] = theme_get_setting('footer_classes');
 
@@ -162,14 +166,20 @@ function handy_preprocess_page(&$variables)
     $variables['#attached']['library'][] = 'handy/' . $fonts;
   }
 
-
   // Check node's view mode, if it is full_content_title_image, set mainmenu to be transparent
   if (!empty($variables['node']) && $variables['node']->current_view_mode == 'full_content_title_image') {
     $variables['mainmenu_transparent'] = 'transparent';
   }
 }
 
-
+/**
+ * Process page title
+ */
+function handy_preprocess_page_title(&$variables)
+{
+  $variables['title_size'] = theme_get_setting('title_size');
+  $variables['title_weight'] = theme_get_setting('title_weight');
+}
 
 /**
  * Process block content
@@ -184,8 +194,9 @@ function handy_theme_suggestions_block_alter(&$suggestions, $variables) {
 /**
 * Implements hook_preprocess_node() to add node view mode to page's variables
 */
-function handy_preprocess_node(array &$variables, $hook) {
-  if(isset($variables['view_mode'])) {
+function handy_preprocess_node(array &$variables, $hook)
+{
+  if (isset($variables['view_mode'])) {
     $node = $variables['node'];
     $node->current_view_mode = $variables['view_mode'];
     $variables['current_view_mode'] = $node->current_view_mode;
