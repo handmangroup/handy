@@ -135,9 +135,6 @@ function handy_preprocess_page(&$variables)
   //Theme Menu Alignment
   $variables['menu_alignment'] = theme_get_setting('theme_menu_alignment');
 
-  //Theme Menu Font Size
-  $variables['link_size'] = theme_get_setting('link_size');
-
   // Theme footer
   $variables['footer_classes'] = theme_get_setting('footer_classes');
 
@@ -185,6 +182,14 @@ function handy_preprocess_page_title(&$variables)
   $variables['title_size'] = theme_get_setting('title_size');
   $variables['title_weight'] = theme_get_setting('title_weight');
 }
+/**
+ * Process menu
+ */
+
+function handy_preprocess_menu(&$variables) {
+  $variables['link_size'] = theme_get_setting('link_size');
+}
+
 
 /**
  * Process block content
