@@ -135,6 +135,9 @@ function handy_preprocess_page(&$variables)
   //Theme Menu Alignment
   $variables['menu_alignment'] = theme_get_setting('theme_menu_alignment');
 
+  //Theme Menu Font Size
+  $variables['link_size'] = theme_get_setting('link_size');
+
   // Theme footer
   $variables['footer_classes'] = theme_get_setting('footer_classes');
 

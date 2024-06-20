@@ -39,16 +39,17 @@
           item.is_expanded ? 'dropdown',
 		      item.is_expanded ? 'has-dropdown',
           item.in_active_trail ? 'active',
+          link_size,
           menu_level != 0 and item.is_expanded ? 'dropdown-submenu dropend'
         ]
       %}
 
       {% if menu_level == 0 and item.is_expanded %}
         <li{{ item.attributes.addClass(item_classes) }}>
-		      {{ link(item.title, item.url, { 'class':['nav-link dropdown-toggle' link_size], 'data-bs-toggle':['dropdown']}) }}
+		      {{ link(item.title, item.url, { 'class':['nav-link dropdown-toggle', 'data-bs-toggle':['dropdown']}) }}
       {% elseif menu_level == 0 and not item.is_expanded %}
         <li{{ item.attributes.addClass(item_classes) }}>
-		      {{ link(item.title, item.url, { 'class':['nav-link' link_size]}) }}
+		      {{ link(item.title, item.url, { 'class':['nav-link']}) }}
       {% elseif menu_level != 0 and item.is_expanded %}
         <li{{ item.attributes.addClass(item_classes) }}>
 		      {{ link(item.title, item.url, { 'class':['dropdown-item dropdown-toggle'], 'data-bs-toggle':['dropdown']}) }}
