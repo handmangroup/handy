@@ -43,6 +43,17 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     ),
   );
 
+  $form['handy_settings']['tabs']['theme_menu_config']['link_size'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu Font Size'),
+    '#default_value' => theme_get_setting('theme_menu_alignment','handy'),
+    '#options'  => array(
+      'fs-small'	=> t('Small'),
+      'fs-base' 	=> t('Base'),
+      'fs-large'	=> t('Large')
+    ),
+  );
+
   // Footer options
   $form['handy_settings']['tabs']['theme_footer_config'] = array(
     '#type' => 'fieldset',
