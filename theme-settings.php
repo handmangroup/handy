@@ -21,7 +21,7 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
 
   $form['handy_settings']['tabs']['theme_menu_config']['theme_menu'] = array(
     '#type' => 'select',
-    '#title' => t('Menu Style'),
+    '#title' => t('Menu Background Color'),
     '#default_value' => theme_get_setting('theme_menu','handy'),
     '#options'  => array(
       'menu_light'	=> t('White - Default'),
@@ -32,8 +32,18 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     ),
   );
 
-  // Footer options
+  $form['handy_settings']['tabs']['theme_menu_config']['theme_menu_alignment'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu Alignment'),
+    '#default_value' => theme_get_setting('theme_menu_alignment','handy'),
+    '#options'  => array(
+      'justify-content-start'	=> t('Left'),
+      'justify-content-center' 	=> t('Center'),
+      'justify-content-end'	=> t('Right')
+    ),
+  );
 
+  // Footer options
   $form['handy_settings']['tabs']['theme_footer_config'] = array(
     '#type' => 'fieldset',
     '#title' => t('Footer Styles'),
@@ -43,7 +53,7 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
 
   $form['handy_settings']['tabs']['theme_footer_config']['footer_classes'] = array(
     '#type' => 'select',
-    '#title' => t('Footer Style'),
+    '#title' => t('Footer Background Color'),
     '#default_value' => theme_get_setting('footer_classes','handy'),
     '#options'  => array(
       'bg-light'	=> t('White - Default'),

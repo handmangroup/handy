@@ -132,6 +132,8 @@ function handy_preprocess_page(&$variables)
   //Theme Page Title
   $variables['title_alignment'] = theme_get_setting('title_alignment');
 
+  //Theme Menu Alignment
+  $variables['menu_alignment'] = theme_get_setting('theme_menu_alignment');
 
   // Theme footer
   $variables['footer_classes'] = theme_get_setting('footer_classes');
@@ -214,3 +216,14 @@ function handy_form_search_block_form_alter(&$form, FormStateInterface $form_sta
   $form['keys']['#attributes']['placeholder'] = t('Type keyword and hit enter');
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function handy_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['layout_builder']) || isset($form['layout_builder__layout'])) {
+    $theme = \Drupal::theme()->getActiveTheme()->getName();
+    if ($theme == 'seven' || $theme == 'claro') {
+      $form['#attached']['library'][] = 'handy/bootstrap_cdn';
+    }
+  }
+}

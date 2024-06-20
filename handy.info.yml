@@ -12,10 +12,10 @@ libraries:
 
 regions:
   top_bar: 'Top bar'
-  branding: 'Site branding'
-  navigation: 'Navigation'
-  navigation_collapsible: 'Navigation (Collapsible)'
-  navigation_other: 'Navigation Other'
+  branding: 'Site branding Top'
+  navigation: 'Navigation Left'
+  navigation_collapsible: 'Navigation (Collapsible) Center'
+  navigation_other: 'Navigation Right'
   title: 'Title'
   highlighted: 'Highlighted'
   help: 'Help'
