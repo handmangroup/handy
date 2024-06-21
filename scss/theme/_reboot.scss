@@ -361,7 +361,7 @@ h6 {
 //----------------------------------------------------------//
 .lead {
   line-height: 1.65;
-  color: initial;
+  color: initial !important;
   &.fs-lg {
     @include font-size(1.05rem !important);
     line-height: 1.6;
