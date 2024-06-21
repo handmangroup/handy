@@ -492,7 +492,7 @@ pre {
 .terminal,
 .kbd,
 .folder,
-.file,
+.file:not(.imce-item),
 mark.doc {
   font-family: $font-family-monospace;
   position: relative;
