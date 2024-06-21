@@ -188,24 +188,24 @@ ul.list-inline {
   color: $primary;
 }
 
-.fs-large {
-  font-size: 1.2rem;
+.fs-lg {
+  font-size: $font-size-lg;
   & > a {
-    font-size: 1.2rem;
+    font-size: $font-size-lg;
   }
 }
 
-.fs-small {
-  font-size: .8rem;
+.fs-sm {
+  font-size: $font-size-sm;
   & > a {
-    font-size: .8rem;
+    font-size: $font-size-sm;
   }
 }
 
 .fs-base {
-  font-size: 1rem;
+  font-size: $font-size-base;
   & > a {
-    font-size: 1rem;
+    font-size: $font-size-base;
   }
 }
 

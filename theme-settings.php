@@ -48,9 +48,9 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     '#title' => t('Menu Font Size'),
     '#default_value' => theme_get_setting('link_size','handy'),
     '#options'  => array(
-      'fs-small'	=> t('Small'),
+      'fs-sm'	=> t('Small'),
       'fs-base' 	=> t('Base'),
-      'fs-large'	=> t('Large')
+      'fs-lg'	=> t('Large')
     ),
   );
 
