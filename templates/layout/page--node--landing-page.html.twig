@@ -107,8 +107,8 @@
     {# Footer #}
 
     {% block footer %}
-      <footer class="{{ footer_classes }} site-footer">
-        <div class="{{ container }} pt-13 pt-md-15 pb-7">
+      <footer class="{{ footer_classes }}">
+        <div class="{{ container }} pt-4 pb-1">
           <div class="row gy-6 gy-lg-0">
             {% if page.footer_1 %}
               <div class="flex-grow-1">{{ page.footer_1 }}</div>
@@ -125,7 +125,9 @@
           </div>
         </div>
         <div class="copyright">
-          {{ page.copyright }}
+          <div class="{{ container}}">
+            {{ page.copyright }}
+          </div>
         </div>
       </footer>
     {% endblock %}
