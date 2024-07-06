@@ -32,6 +32,45 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     ),
   );
 
+  $form['handy_settings']['tabs']['theme_menu_config']['link_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu Text Color'),
+    '#default_value' => theme_get_setting('link_color','handy'),
+    '#options'  => array(
+      'link-dark' 	=> t('Black - Default'),
+      'link-light'	=> t('White'),
+      'link-primary'	=> t('Primary color'),
+      'link-secondary'	=> t('Secondary color'),
+      'link-gray' => t('Gray')
+    ),
+  );
+
+  $form['handy_settings']['tabs']['theme_menu_config']['dropdown_link_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu Dropdown Text Color'),
+    '#default_value' => theme_get_setting('dropdown_link_color','handy'),
+    '#options'  => array(
+      'link-dark' 	=> t('Black - Default'),
+      'link-light'	=> t('White'),
+      'link-primary'	=> t('Primary color'),
+      'link-secondary'	=> t('Secondary color'),
+      'link-gray' => t('Gray')
+    ),
+  );
+
+  $form['handy_settings']['tabs']['theme_menu_config']['dropdown_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu Dropdown Background Color'),
+    '#default_value' => theme_get_setting('dropdown_color','handy'),
+    '#options'  => array(
+      'bg_light'	=> t('White - Default'),
+      'bg_dark' 	=> t('Black'),
+      'bg-primary'	=> t('Primary color'),
+      'bg-secondary'	=> t('Secondary color'),
+      'bg-gray' => t('Gray')
+    ),
+  );
+
   $form['handy_settings']['tabs']['theme_menu_config']['theme_menu_alignment'] = array(
     '#type' => 'select',
     '#title' => t('Menu Alignment'),
