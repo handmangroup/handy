@@ -40,10 +40,12 @@ function handy_preprocess_html(&$variables)
     $pcl = _color_luminance($pc, 0.95);
     $bc = '#000';
     $pct = _getContrastColor($pc, $white, $bc);
+    $pctrgb = _hex2rgb( $pct );
     $sc = theme_get_setting('bootstrap_barrio_base_secondary_color') ?? '#FBEAEB';
     $scrgb = _hex2rgb( $sc );
     $scd = _color_luminance($sc, -0.15);
     $scl = _color_luminance($sc, 0.95);
+    $sct = _getContrastColor($sc, $white, $bc);
     $color = theme_get_setting('bootstrap_barrio_body_color') ?? '#000';
     $bg = theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white';
     $h1 = theme_get_setting('bootstrap_barrio_h1_color') ?? $color;
@@ -63,10 +65,12 @@ function handy_preprocess_html(&$variables)
       "--bs-primary-bg-subtle:$pcl;",
       "--bs-secondary:$sc;",
       "--bb-secondary-dark:$scd;",
+      "--bb-secondary-text:$sct;",
       "--bs-secondary-rgb:$scrgb;",
       "--bs-secondary-bg-subtle:$scl;",
-      "--bs-link-color:$pc;",
-      "--bs-link-hover-color:$pcd;",
+      "--bs-btn-hover-color:$pct;",
+      "--bs-link-hover-color-rgb:$pctrgb;",
+      "--bs-link-hover-color:$pct;",
       "--bs-body-color:$color;",
       "--bs-body-bg:$bg;",
       "--bb-h1-color:$h1;",

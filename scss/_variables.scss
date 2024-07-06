@@ -114,9 +114,9 @@ $theme-colors: map-merge($colors,
     "warning": $warning,
     "danger": $danger,
   ));
-$text-colors: map-remove($theme-colors, "dark") !default;
-$link-colors: map-remove($theme-colors, "dark") !default;
-$button-colors: map-remove($theme-colors, "gray") !default;
+$text-colors: map-remove($colors, "dark") !default;
+$link-colors: map-remove($colors, "dark") !default;
+$button-colors: map-remove($colors, "gray") !default;
 $button-soft-colors: map-remove($colors, "white", "light", "gray") !default;
 $bg-pale-colors: map-remove($colors, "white", "light", "gray") !default;
 $bg-soft-colors: map-remove($colors, "white", "light", "yellow") !default;
