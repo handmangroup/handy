@@ -30,49 +30,51 @@ function handy_preprocess_html(&$variables)
   if (theme_get_setting('bootstrap_barrio_enable_color')) {
     $variables['#attached']['library'][] = 'handy/colors';
 
-      // CSS variables
-      $gray200 = '#e9ecef';
-      $gray800 = '#343a40';
-      $white = '#fff';
-      $pc = theme_get_setting('bootstrap_barrio_base_primary_color') ?? '#2F3C7E';
-      $pcrgb = _hex2rgb( $pc );
-      $pcd = _color_luminance($pc, -0.15);
-      $bc = '#000';
-      $pct = _getContrastColor($pc, $white, $bc);
-      $sc = theme_get_setting('bootstrap_barrio_base_secondary_color') ?? '#FBEAEB';
-      $scrgb = _hex2rgb( $sc );
-      $scd = _color_luminance($sc, -0.15);
-      $color = theme_get_setting('bootstrap_barrio_body_color') ?? '#000';
-      $color = ($color == 'gray-800') ? $gray800 : '#000';
-      $bg = theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white';
-      $bg = ($bg == 'gray-200') ? $gray200 : $white;
-      $h1 = theme_get_setting('bootstrap_barrio_h1_color') ?? $color;
-      $h1 = ($h1 == 'primary') ? $pc : $h1;
-      $h1 = ($h1 == 'secondary') ? $sc : $h1;
-      $h2 = theme_get_setting('bootstrap_barrio_h2_color') ?? $color;
-      $h2 = ($h2 == 'primary') ? $pc : $h2;
-      $h2 = ($h2 == 'secondary') ? $sc : $h2;
-      $h3 = theme_get_setting('bootstrap_barrio_h3_color') ?? 'base';
-      $h3 = ($h3 == 'primary') ? $pc : $h3;
-      $h3 = ($h3 == 'secondary') ? $sc : $h3;
-      $styles = [
-        "--bs-primary:$pc;",
-        "--bb-primary-dark:$pcd;",
-        "--bb-primary-light:$pct;",
-        "--bs-primary-rgb:$pcrgb;",
-        "--bs-secondary:$sc;",
-        "--bb-secondary-dark:$scd;",
-        "--bs-secondary-rgb:$scrgb;",
-        "--bs-link-color:$pc;",
-        "--bs-link-hover-color:$pcd;",
-        "--bs-body-color:$color;",
-        "--bs-body-bg:$bg;",
-        "--bb-h1-color:$h1;",
-        "--bb-h2-color:$h2;",
-        "--bb-h3-color:$h3;",
-      ];
-      $variables['html_attributes']->setAttribute('style', implode('', $styles));
-    }
+    // CSS variables
+    $gray200 = '#e9ecef';
+    $gray800 = '#343a40';
+    $white = '#fff';
+    $pc = theme_get_setting('bootstrap_barrio_base_primary_color') ?? '#2F3C7E';
+    $pcrgb = _hex2rgb( $pc );
+    $pcd = _color_luminance($pc, -0.15);
+    $pcl = _color_luminance($pc, 0.95);
+    $bc = '#000';
+    $pct = _getContrastColor($pc, $white, $bc);
+    $sc = theme_get_setting('bootstrap_barrio_base_secondary_color') ?? '#FBEAEB';
+    $scrgb = _hex2rgb( $sc );
+    $scd = _color_luminance($sc, -0.15);
+    $scl = _color_luminance($sc, 0.95);
+    $color = theme_get_setting('bootstrap_barrio_body_color') ?? '#000';
+    $bg = theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white';
+    $h1 = theme_get_setting('bootstrap_barrio_h1_color') ?? $color;
+    $h1 = ($h1 == 'primary') ? $pc : $h1;
+    $h1 = ($h1 == 'secondary') ? $sc : $h1;
+    $h2 = theme_get_setting('bootstrap_barrio_h2_color') ?? $color;
+    $h2 = ($h2 == 'primary') ? $pc : $h2;
+    $h2 = ($h2 == 'secondary') ? $sc : $h2;
+    $h3 = theme_get_setting('bootstrap_barrio_h3_color') ?? 'base';
+    $h3 = ($h3 == 'primary') ? $pc : $h3;
+    $h3 = ($h3 == 'secondary') ? $sc : $h3;
+    $styles = [
+      "--bs-primary:$pc;",
+      "--bb-primary-dark:$pcd;",
+      "--bb-primary-light:$pct;",
+      "--bs-primary-rgb:$pcrgb;",
+      "--bs-primary-bg-subtle:$pcl;",
+      "--bs-secondary:$sc;",
+      "--bb-secondary-dark:$scd;",
+      "--bs-secondary-rgb:$scrgb;",
+      "--bs-secondary-bg-subtle:$scl;",
+      "--bs-link-color:$pc;",
+      "--bs-link-hover-color:$pcd;",
+      "--bs-body-color:$color;",
+      "--bs-body-bg:$bg;",
+      "--bb-h1-color:$h1;",
+      "--bb-h2-color:$h2;",
+      "--bb-h3-color:$h3;",
+    ];
+    $variables['html_attributes']->setAttribute('style', implode('', $styles));
+  }
 }
 
 /**
@@ -82,9 +84,9 @@ function handy_preprocess_html(&$variables)
 function handy_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // Enable 'page_fullwidth' for nodes
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-	if(!is_object($node)) {
-    $node = \Drupal\node\Entity\Node::load($node);
-  }
+    if(!is_object($node)) {
+      $node = \Drupal\node\Entity\Node::load($node);
+    }
     $content_type = $node->bundle();
     if ($content_type == 'landing_page') {
       $suggestions[] = 'page__fullwidth';
@@ -93,7 +95,7 @@ function handy_theme_suggestions_page_alter(array &$suggestions, array $variable
 
   // Enable 'page_fullwidth' for user profile
   if ($node = \Drupal::routeMatch()->getRouteName() == 'entity.user.canonical') {
-  	$suggestions[] = 'page__fullwidth';
+    $suggestions[] = 'page__fullwidth';
   }
 
   // Enable 'page_fullwidth' for views
@@ -128,6 +130,9 @@ function handy_preprocess_page(&$variables)
   else {
     $variables['mainmenu_class'] = 'navbar-light navbar-bg-light';
   }
+
+
+
 
   //Theme Page Title
   $variables['title_alignment'] = theme_get_setting('title_alignment');
@@ -186,8 +191,21 @@ function handy_preprocess_page_title(&$variables)
  * Process menu
  */
 
-function handy_preprocess_menu(&$variables) {
+function handy_preprocess_menu(&$variables)
+{
   $variables['link_size'] = theme_get_setting('link_size');
+
+
+//Theme Menu Links color
+  $variables['link_color'] = theme_get_setting('link_color');
+  $variables['dropdown_color'] = theme_get_setting('dropdown_color');
+  $variables['dropdown_link_color'] = theme_get_setting('dropdown_link_color');
+
+  if (isset($variables['items']) && is_array($variables['items'])) {
+    foreach ($variables['items'] as &$item) {
+      $item['attributes']['class'] = theme_get_setting('dropdown_link_color');
+    }
+  }
 }
 
 
@@ -202,8 +220,8 @@ function handy_theme_suggestions_block_alter(&$suggestions, $variables) {
 }
 
 /**
-* Implements hook_preprocess_node() to add node view mode to page's variables
-*/
+ * Implements hook_preprocess_node() to add node view mode to page's variables
+ */
 function handy_preprocess_node(array &$variables, $hook)
 {
   if (isset($variables['view_mode'])) {

@@ -6,7 +6,7 @@ Author:		elemis
 */
 
 // Bootstrap Functions
-@import "../node_modules/bootstrap/scss/functions";
+@import "../../../../libraries/bootstrap/scss/functions";
 
 // Theme colors
 @import "theme-colors";
@@ -18,11 +18,11 @@ Author:		elemis
 @import "variables";
 
 // Bootstrap configuration
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
-@import "../node_modules/bootstrap/scss/maps";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/utilities";
+@import "../../../../libraries/bootstrap/scss/variables";
+@import "../../../../libraries/bootstrap/scss/variables-dark";
+@import "../../../../libraries/bootstrap/scss/maps";
+@import "../../../../libraries/bootstrap/scss/mixins";
+@import "../../../../libraries/bootstrap/scss/utilities";
 
 // Theme configuration
 @import "theme/functions";

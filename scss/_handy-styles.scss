@@ -453,6 +453,19 @@ table {
   }
 }
 
+.navbar-nav {
+  .dropdown-menu {
+    .nav-item a:hover {
+      &:before {
+        @include caret-end();
+        font-family: $font-family-unicons;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+}
+
 /* Sidebar */
 .sidebar {
   .block {
