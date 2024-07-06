@@ -116,16 +116,6 @@ blockquote,
   border-color: $main-color !important
 }
 .btn-primary {
-  --bs-btn-active-bg: $main-color;
-  --bs-btn-active-border-color: $main-color;
-  @include button-variant(
-    $background: $main-color,
-    $color: $white,
-    $border: $main-color,
-    $hover-color: $white,
-    $active-color: $white,
-    $disabled-color: $white,
-  );
   &.btn-expand {
     color: $main-color;
     &:before {
