@@ -46,17 +46,21 @@ function handy_preprocess_html(&$variables)
     $scd = _color_luminance($sc, -0.15);
     $scl = _color_luminance($sc, 0.95);
     $sct = _getContrastColor($sc, $white, $bc);
+    $tc =  theme_get_setting('bootstrap_barrio_base_tertiary_color') ?? '#000';
     $color = theme_get_setting('bootstrap_barrio_body_color') ?? '#000';
     $bg = theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white';
     $h1 = theme_get_setting('bootstrap_barrio_h1_color') ?? $color;
     $h1 = ($h1 == 'primary') ? $pc : $h1;
     $h1 = ($h1 == 'secondary') ? $sc : $h1;
+    $h1 = ($h1 == 'tertiary') ? $tc : $h1;
     $h2 = theme_get_setting('bootstrap_barrio_h2_color') ?? $color;
     $h2 = ($h2 == 'primary') ? $pc : $h2;
     $h2 = ($h2 == 'secondary') ? $sc : $h2;
+    $h2 = ($h2 == 'tertiary') ? $tc : $h2;
     $h3 = theme_get_setting('bootstrap_barrio_h3_color') ?? 'base';
     $h3 = ($h3 == 'primary') ? $pc : $h3;
     $h3 = ($h3 == 'secondary') ? $sc : $h3;
+    $h3 = ($h3 == 'tertiary') ? $tc : $h3;
     $styles = [
       "--bs-primary:$pc;",
       "--bb-primary-dark:$pcd;",
@@ -77,6 +81,7 @@ function handy_preprocess_html(&$variables)
       "--bb-h1-color:$h1;",
       "--bb-h2-color:$h2;",
       "--bb-h3-color:$h3;",
+      "--bs-tertiary:$tc;"
     ];
     $variables['html_attributes']->setAttribute('style', implode('', $styles));
   }

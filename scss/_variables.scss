@@ -84,6 +84,7 @@ $shadow-border: #083c82 !default;
 $feedback-success: #198754;
 $feedback-danger: #dc3545;
 $primary: $blue !default;
+$tertiary: #4d2d7d;
 $colors: (
   "blue": $blue,
   "red": $red,
@@ -96,6 +97,7 @@ $colors: (
   "dark": $dark,
   "primary": $primary,
   "secondary": $secondary,
+  "tertiary": $tertiary,
   "success": $success,
   "info": $info,
    "warning": $warning,
@@ -113,6 +115,7 @@ $theme-colors: map-merge($colors,
     "info": $info,
     "warning": $warning,
     "danger": $danger,
+    "tertiary": $tertiary,
   ));
 $text-colors: map-remove($colors, "dark") !default;
 $link-colors: map-remove($colors, "dark") !default;

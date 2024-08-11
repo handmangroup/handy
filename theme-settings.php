@@ -5,6 +5,16 @@ use Drupal\system\Form\ThemeSettingsForm;
 use Drupal\Core\Form;
 
 function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'bootstrap_barrio/color-picker';
+
+  $color_config = [
+    'colors' => [
+      'bootstrap_barrio_base_primary_color' => 'Primary base color',
+      'bootstrap_barrio_base_secondary_color' => 'Secondary base color',
+      'bootstrap_barrio_base_tertiary_color' => 'Tertiary base color',
+    ],
+  ];
+
   $form['handy_settings'] = array(
     '#type' => 'details',
     '#title' => t('Menu and Footer Settings'),
@@ -194,6 +204,110 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
       'vollkorn_exo' => t('Vollkorn, Exo'),
     ],
   ];
+
+  // Colors.
+  $form['colors'] = [
+    '#type' => 'details',
+    '#title' => t('Colors'),
+    '#group' => 'bootstrap',
+  ];
+
+  $form['colors']['scheme'] = [
+    '#type' => 'details',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#title' => t('Barrio Color Scheme Settings'),
+  ];
+  $form['colors']['scheme']['bootstrap_barrio_enable_color'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable color Scheme'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_enable_color'),
+    '#ajax' => [
+      'callback' => 'colorCallback',
+      'wrapper' => 'color_container',
+    ],
+  ];
+  $form['colors']['scheme']['bootstrap_barrio_scheme_description'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'p',
+    '#value' => t('These settings adjust the look and feel of the barrio based themes. Changing the colors below will change the basic color values the barrio based theme uses.'),
+  ];
+  $form['colors']['scheme']['color_container'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'id' => 'color_container'
+    ],
+  ];
+
+  if ($form_state->getValue('bootstrap_barrio_enable_color', theme_get_setting('bootstrap_barrio_enable_color'))) {
+    foreach ($color_config['colors'] as $key => $title) {
+      $form['colors']['scheme']['color_container'][$key] = [
+        '#type' => 'textfield',
+        '#maxlength' => 7,
+        '#size' => 10,
+        '#title' => t($title),
+        '#description' => t('Enter color in full hexadecimal format (#abc123).') . '<br/>' . t('Derivatives will be formed from this color.'),
+        '#default_value' => theme_get_setting($key),
+        '#attributes' => [
+          'pattern' => '^#[a-fA-F0-9]{6}',
+        ],
+        '#wrapper_attributes' => [
+          'data-drupal-selector' => 'barrio-color-picker',
+        ],
+      ];
+    }
+    $form['colors']['scheme']['color_container']['bootstrap_barrio_body_color'] = [
+      '#type' => 'select',
+      '#title' => t('Body color'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_body_color') ?? 'gray-800',
+      '#options' => [
+        'gray-800' => t('Dark gray'),
+        'black' => t('Black'),
+      ],
+    ];
+    $form['colors']['scheme']['color_container']['bootstrap_barrio_body_bg_color'] = [
+      '#type' => 'select',
+      '#title' => t('Body Background Color'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_body_bg_color') ?? 'white',
+      '#options' => [
+        'white' => t('White'),
+        'gray-200' => t('Light gray'),
+      ],
+    ];
+    $form['colors']['scheme']['color_container']['bootstrap_barrio_h1_color'] = [
+      '#type' => 'select',
+      '#title' => t('H1 color'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_h1_color') ?? 'base',
+      '#options' => [
+        'base' => t('Base color'),
+        'primary' => t('Primary color'),
+        'secondary' => t('Secondary color'),
+        'tertiary' => t('Tertiary color'),
+      ],
+    ];
+    $form['colors']['scheme']['color_container']['bootstrap_barrio_h2_color'] = [
+      '#type' => 'select',
+      '#title' => t('H2 color'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_h2_color') ?? 'base',
+      '#options' => [
+        'base' => t('Base color'),
+        'primary' => t('Primary color'),
+        'secondary' => t('Secondary color'),
+        'tertiary' => t('Tertiary color'),
+      ],
+    ];
+    $form['colors']['scheme']['color_container']['bootstrap_barrio_h3_color'] = [
+      '#type' => 'select',
+      '#title' => t('H3 color'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_h3_color') ?? 'base',
+      '#options' => [
+        'base' => t('Base color'),
+        'primary' => t('Primary color'),
+        'secondary' => t('Secondary color'),
+        'tertiary' => t('Tertiary color'),
+      ],
+    ];
+  }
 }
 
 
