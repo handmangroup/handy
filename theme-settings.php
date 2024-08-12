@@ -116,6 +116,7 @@ function handy_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormSta
     '#title' => t('Footer Background Color'),
     '#default_value' => theme_get_setting('footer_classes','handy'),
     '#options'  => array(
+      '' => t('None'),
       'bg-light'	=> t('White - Default'),
       'bg-primary'	=> t('Primary color'),
       'bg-secondary'	=> t('Secondary color'),
