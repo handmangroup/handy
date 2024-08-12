@@ -68,9 +68,11 @@ function handy_preprocess_html(&$variables)
       "--bs-primary-rgb:$pcrgb;",
       "--bs-primary-bg-subtle:$pcl;",
       "--bb-primary-text:$pct;",
+      "--bs-primary-text:$pct;",
       "--bs-secondary:$sc;",
       "--bb-secondary-dark:$scd;",
       "--bb-secondary-text:$sct;",
+      "--bs-secondary-text:$sct;",
       "--bs-secondary-rgb:$scrgb;",
       "--bs-secondary-bg-subtle:$scl;",
       "--bs-btn-hover-color:$pct;",
@@ -81,7 +83,8 @@ function handy_preprocess_html(&$variables)
       "--bb-h1-color:$h1;",
       "--bb-h2-color:$h2;",
       "--bb-h3-color:$h3;",
-      "--bs-tertiary:$tc;"
+      "--bs-tertiary:$tc;",
+      "--bs-secondary-text:$tc;"
     ];
     $variables['html_attributes']->setAttribute('style', implode('', $styles));
   }
