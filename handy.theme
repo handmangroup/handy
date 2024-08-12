@@ -82,7 +82,7 @@ function handy_preprocess_html(&$variables)
       "--bb-h2-color:$h2;",
       "--bb-h3-color:$h3;",
       "--bs-tertiary:$tc;",
-      "--bs-secondary-text:$tc;"
+      "--bb-tertiary-text:$tc;"
     ];
     $variables['html_attributes']->setAttribute('style', implode('', $styles));
   }
