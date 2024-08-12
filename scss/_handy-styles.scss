@@ -184,6 +184,18 @@ ul.list-inline {
   }
 }
 
+.text-primary {
+  color: var(--bb-primary-text);
+}
+
+.text-secondary {
+  color: var(--bb-secondary-text);
+}
+
+.text-tertiary {
+  color: var(--bb-tertiary-text);
+}
+
 .fs-lg {
   font-size: $font-size-lg;
   & > a {
