@@ -383,3 +383,29 @@ form.dark-fields .form-control:focus {
     color: rgba($main-color, 0.7);
   }
 }
+
+
+.btn-tertiary {
+  @include button-variant(
+          $background: tint-color($tertiary, $bg-pale-level),
+          $border: tint-color($tertiary, $bg-pale-level),
+          $color: $tertiary,
+          $hover-color: $tertiary,
+          $active-color: $tertiary,
+          $disabled-color: $tertiary
+  );
+  &.btn-expand {
+    color: $tertiary;
+    &:before {
+      background-color: $tertiary;
+    }
+  }
+  &.btn-circle.ripple::before,
+  &.btn-circle.ripple::after {
+    background-color: $tertiary;
+  }
+}
+
+.text-tertiary {
+  color: $tertiary;
+}

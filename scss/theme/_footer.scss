@@ -20,3 +20,11 @@ footer {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+
+footer .row {
+  flex-wrap: nowrap;
+
+  & > * {
+    width: auto;
+  }
+}
