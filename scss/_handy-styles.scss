@@ -481,6 +481,7 @@ table {
 @media (min-width: 62rem) {
   .navbar-expand-lg .offcanvas .offcanvas-body {
     flex-direction: row !important;
+    align-items: center;
   }
 }
 
