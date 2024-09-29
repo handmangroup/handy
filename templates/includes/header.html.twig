@@ -13,38 +13,41 @@
         mainmenu_absolute
       ]
       %}
-      {% if page.branding %}
-        <div class="navbar-brand">
+      <div class="navbar-brand">
+        {% if page.branding %}
           {{ page.branding }}
+        {% endif %}
+        <div class="d-lg-none">
+          <button class="hamburger offcanvas-nav-btn ms-auto"><span></span></button>
         </div>
-      {% endif %}
+      </div>
+
       <nav{{ attributes.addClass(navbar_classes) }} id="navbar-main">
         <div class="{{ container }}">
-          <div class="d-lg-none ms-auto">
-            <button class="hamburger offcanvas-nav-btn ms-auto"><span></span></button>
-          </div>
           {% if page.navigation %}
             <div class="navbar-nav">
               {{ page.navigation }}
             </div>
           {% endif %}
-          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start {{ menu_alignment }}">
-            <div class="offcanvas-header d-lg-none">
+          {% if page.navigation_collapsible %}
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start {{ menu_alignment }}">
+              <div class="offcanvas-header d-lg-none">
 
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body d-flex flex-column h-100">
+                {{ page.navigation_collapsible }}
+              </div>
             </div>
-            <div class="offcanvas-body d-flex flex-column h-100">
-              {{ page.navigation_collapsible }}
-            </div>
-          </div>
+          {% endif %}
           {% if page.navigation_other %}
             <div class="navbar-other d-flex ms-auto">
               {{ page.navigation_other }}
             </div>
           {% endif %}
-          <!--end of row-->
         </div>
-        <!--end of container-->
+
+
       </nav>
       <!--end bar-->
     {% endblock %}
