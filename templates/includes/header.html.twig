@@ -24,32 +24,26 @@
 
       <nav{{ attributes.addClass(navbar_classes) }} id="navbar-main">
         <div class="{{ container }}">
-          {% if page.navigation %}
-            <div class="navbar-nav">
-              {{ page.navigation }}
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start {{ menu_alignment }}">
+            <div class="offcanvas-header d-lg-none">
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          {% endif %}
-          {% if page.navigation_collapsible %}
-            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start {{ menu_alignment }}">
-              <div class="offcanvas-header d-lg-none">
-
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body d-flex flex-column h-100">
-                {{ page.navigation_collapsible }}
-              </div>
+            <div class="offcanvas-body d-flex flex-column h-100">
+              {% if page.navigation %}
+                <div class="navbar-nav nav-left">
+                  {{ page.navigation }}
+                </div>
+              {% endif %}
+              {{ page.navigation_collapsible }}
+              {% if page.navigation_other %}
+                <div class="navbar-other d-flex ms-auto">
+                  {{ page.navigation_other }}
+                </div>
+              {% endif %}
             </div>
-          {% endif %}
-          {% if page.navigation_other %}
-            <div class="navbar-other d-flex ms-auto">
-              {{ page.navigation_other }}
-            </div>
-          {% endif %}
+          </div>
         </div>
-
-
       </nav>
-      <!--end bar-->
     {% endblock %}
   {% endif %}
 

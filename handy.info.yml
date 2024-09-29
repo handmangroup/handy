@@ -14,7 +14,7 @@ regions:
   top_bar: 'Top bar'
   branding: 'Site branding Top'
   navigation: 'Navigation Left'
-  navigation_collapsible: 'Navigation (Collapsible) Center'
+  navigation_collapsible: 'Navigation Center'
   navigation_other: 'Navigation Right'
   title: 'Title'
   highlighted: 'Highlighted'
